@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IELTS Mastery & Band Score Booster | L.B. English Co.</title>
+  <meta name="description" content="Targeted online IELTS Academic & General Training coaching. Band score calculator, speaking cue cards, writing analysis, and 1:1 strategy sprints.">
+  <link rel="icon" href="assets/lb-english-co-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0d1b34;
+      --ink-2: #182a49;
+      --blue: #315bea;
+      --blue-dark: #1d42c3;
+      --sky: #91e5ff;
+      --sky-soft: #e8f8ff;
+      --lime: #c9f36b;
+      --paper: #ffffff;
+      --mist: #f4f7fb;
+      --line: #dce4ef;
+      --muted: #5e6c81;
+      --warm: #fffaf0;
+      --shadow-sm: 0 10px 25px rgba(13, 27, 52, .06);
+      --shadow: 0 20px 50px rgba(13, 27, 52, .1);
+      --radius: 20px;
+      --max: 1200px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .mono { font-family: "IBM Plex Mono", monospace; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue-dark); font-weight: 700; }
+    .eyebrow::before { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); content: ""; box-shadow: 0 0 0 4px rgba(49, 91, 234, .15); }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(16px);
+    }
+    .nav { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; }
+    .brand img { width: 52px; height: 34px; object-fit: contain; }
+    .brand strong { display: block; font-family: "Manrope", sans-serif; font-size: 1rem; font-weight: 800; line-height: 1; }
+    .brand small { display: block; margin-top: 4px; color: var(--muted); font: 600 .48rem "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-menu { display: flex; align-items: center; gap: 24px; }
+    .nav-link { font-weight: 600; font-size: .9rem; transition: color .2s ease; }
+    .nav-link:hover { color: var(--blue); }
+    
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: .88rem;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark { color: #fff; background: var(--ink); box-shadow: 0 10px 24px rgba(13, 27, 52, .15); }
+    .btn-dark:hover { background: var(--blue); }
+    .btn-blue { color: #fff; background: var(--blue); box-shadow: 0 10px 24px rgba(49, 91, 234, .2); }
+    .btn-blue:hover { background: var(--blue-dark); }
+    .btn-lime { background: var(--lime); color: var(--ink); }
+    .btn-light { border-color: var(--line); background: #fff; }
+    
+    /* Hero */
+    .hero {
+      padding: 90px 0 70px;
+      background: radial-gradient(circle at 80% 20%, rgba(145, 229, 255, .35), transparent 40%), linear-gradient(135deg, #f8faff 0%, #edf3fc 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 50px; align-items: center; }
+    h1 { font-family: "Manrope", sans-serif; font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 1.04; letter-spacing: -.05em; margin: 18px 0 20px; }
+    .hero p { color: var(--muted); font-size: 1.1rem; line-height: 1.65; margin: 0 0 30px; max-width: 580px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .badge-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .badge { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; background: #fff; font-size: .78rem; font-weight: 600; color: var(--ink-2); }
+    
+    /* Score Calculator Card */
+    .calc-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .calc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--line); padding-bottom: 15px; }
+    .calc-header strong { font-family: "Manrope", sans-serif; font-size: 1.15rem; }
+    .score-display {
+      text-align: center;
+      padding: 24px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .score-display .band { font-family: "Manrope", sans-serif; font-size: 3.5rem; font-weight: 800; line-height: 1; color: var(--lime); }
+    .score-display span { font-size: .85rem; color: #cbd6e2; display: block; margin-top: 6px; }
+    .calc-sliders { display: grid; gap: 16px; }
+    .slider-group { display: grid; gap: 6px; }
+    .slider-row { display: flex; justify-content: space-between; font-size: .85rem; font-weight: 700; }
+    .slider-row span.val { color: var(--blue); font-family: "IBM Plex Mono", monospace; }
+    input[type="range"] { width: 100%; accent-color: var(--blue); cursor: pointer; }
+    
+    /* Sections */
+    .section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 50px; }
+    .section-head h2 { font-family: "Manrope", sans-serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -.04em; margin: 12px 0 16px; }
+    .section-head p { color: var(--muted); font-size: 1.05rem; margin: 0; }
+    
+    /* Interactive Cue Card Tool */
+    .cue-tool {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 30px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 36px;
+      background: var(--mist);
+    }
+    .cue-card {
+      border: 2px dashed var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 26px;
+    }
+    .cue-card h3 { margin: 0 0 12px; font-family: "Manrope", sans-serif; font-size: 1.3rem; color: var(--blue-dark); }
+    .cue-card ul { padding-left: 20px; color: var(--ink-2); font-size: .92rem; line-height: 1.8; margin: 0 0 20px; }
+    .cue-timer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 12px;
+      padding: 12px 18px;
+      background: var(--warm);
+      border: 1px solid #fedfa7;
+      font-weight: 700;
+    }
+    .timer-val { font-family: "IBM Plex Mono", monospace; font-size: 1.4rem; color: #b25e02; }
+    .cue-strategies { display: grid; gap: 14px; }
+    .strat-box {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fff;
+    }
+    .strat-box strong { display: block; font-size: .95rem; margin-bottom: 4px; color: var(--ink); }
+    .strat-box p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+
+    /* Program Cards */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .plan-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px 28px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .plan-card.featured { border-color: var(--blue); box-shadow: 0 18px 45px rgba(49, 91, 234, .12); }
+    .plan-tag {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      border-radius: 999px;
+      padding: 4px 12px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: .7rem;
+      font-weight: 800;
+    }
+    .plan-card h3 { font-family: "Manrope", sans-serif; font-size: 1.4rem; margin: 10px 0 6px; }
+    .plan-card p.desc { color: var(--muted); font-size: .86rem; margin: 0 0 20px; }
+    .plan-features { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 10px; font-size: .85rem; }
+    .plan-features li { display: flex; gap: 9px; align-items: start; }
+    .plan-features li::before { content: "✓"; color: var(--blue); font-weight: 800; }
+    
+    /* Footer */
+    footer { padding: 60px 0 30px; background: var(--ink); color: #9bb0cd; }
+    .footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid rgba(255, 255, 255, .1); padding-bottom: 30px; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; font-size: .85rem; font-weight: 600; }
+    .footer-links a:hover { color: #fff; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 200;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--ink);
+      transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+
+    /* Mobile Menu */
+    .menu-button {
+      width: 44px;
+      height: 44px;
+      display: none;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .menu-button span, .menu-button::before, .menu-button::after {
+      width: 20px;
+      height: 2px;
+      display: block;
+      background: var(--ink);
+      content: "";
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .menu-button::before { transform: translateY(-5px); }
+    .menu-button::after { transform: translateY(5px); }
+    .menu-button[aria-expanded="true"] span { opacity: 0; }
+    .menu-button[aria-expanded="true"]::before { transform: translateY(2px) rotate(45deg); }
+    .menu-button[aria-expanded="true"]::after { transform: translateY(-2px) rotate(-45deg); }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      z-index: 300;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(7, 16, 31, .68);
+      backdrop-filter: blur(8px);
+    }
+    .modal.open { display: grid; }
+    .modal-card {
+      position: relative;
+      width: min(580px, 100%);
+      max-height: calc(100vh - 44px);
+      overflow-y: auto;
+      border-radius: 24px;
+      padding: 34px;
+      background: #fff;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .28);
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .8rem; font-weight: 700; }
+    .field input, .field select, .field textarea { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: .88rem; }
+    .field textarea { min-height: 80px; resize: vertical; }
+
+    /* Quick Connect */
+    .quick-connect { position: fixed; z-index: 120; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .quick-pill { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: .84rem; box-shadow: 0 12px 32px rgba(13, 27, 52, .18); cursor: pointer; text-decoration: none; }
+    .quick-pill:hover { transform: translateY(-3px); }
+    .quick-pill-wa { background: #25D366; color: #fff; border: 1px solid #1fa851; }
+    .quick-pill-cal { background: var(--ink); color: #fff; border: 1px solid rgba(255,255,255,.15); }
+    .quick-pill svg { width: 18px; height: 18px; fill: currentColor; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .cue-tool, .grid-3 { grid-template-columns: 1fr; }
+      .nav-menu { position: fixed; inset: 80px 20px auto; display: none; flex-direction: column; align-items: stretch; gap: 12px; border: 1px solid var(--line); border-radius: 18px; padding: 20px; background: #fff; box-shadow: var(--shadow); }
+      .nav-menu.open { display: flex; }
+      .menu-button { display: grid; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/lb-english-co-mark.svg" alt="L.B. English Co." width="52" height="34">
+        <span>
+          <strong>L.B. English Co.</strong>
+          <small>IELTS Mastery Hub</small>
+        </span>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <a class="nav-link" href="index.html">Main Studio</a>
+        <a class="nav-link" href="ydt-yds.html">YDT &amp; YDS Hub</a>
+        <a class="nav-link" href="speaking.html">Speaking Studio</a>
+        <a class="nav-link" href="resources.html">Free Library</a>
+      </nav>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button class="btn btn-blue" type="button" data-open-consultation>Book 1:1 Diagnostic</button>
+        <button class="menu-button" type="button" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="content">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="mono eyebrow">Academic &amp; General Training</span>
+        <h1>Break the Band 6.5 Ceiling with Precision Coaching.</h1>
+        <p>Most IELTS candidates get stuck not because of English knowledge, but because of vague paragraph structure, unnatural collocation, and uncalibrated speaking fluency. We fix all three.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#calculator">Test Band Score Calculator</a>
+          <a class="btn btn-light" href="#cue-simulator">Practice Part 2 Cue Cards</a>
+        </div>
+        <div class="badge-bar">
+          <span class="badge">🎯 Band 7.5+ Specialists</span>
+          <span class="badge">✍️ Sentence-by-Sentence Writing Rubrics</span>
+          <span class="badge">🗣️ Live 1:1 Speaking Feedback</span>
+        </div>
+      </div>
+
+      <!-- Live Band Score Calculator -->
+      <div class="calc-card" id="calculator">
+        <div class="calc-header">
+          <strong>Overall Band Score Estimator</strong>
+          <span class="mono" style="color: var(--blue);">IELTS v26</span>
+        </div>
+        <div class="score-display">
+          <div class="band" id="overallBand">7.5</div>
+          <span id="bandDesc">C1 Level · Good User (Meets Top University Criteria)</span>
+        </div>
+        <div class="calc-sliders">
+          <div class="slider-group">
+            <div class="slider-row"><span>Listening Band</span><span class="val" id="listenVal">7.5</span></div>
+            <input type="range" id="listenSlider" min="4.0" max="9.0" step="0.5" value="7.5">
+          </div>
+          <div class="slider-group">
+            <div class="slider-row"><span>Reading Band</span><span class="val" id="readVal">8.0</span></div>
+            <input type="range" id="readSlider" min="4.0" max="9.0" step="0.5" value="8.0">
+          </div>
+          <div class="slider-group">
+            <div class="slider-row"><span>Writing Band</span><span class="val" id="writeVal">7.0</span></div>
+            <input type="range" id="writeSlider" min="4.0" max="9.0" step="0.5" value="7.0">
+          </div>
+          <div class="slider-group">
+            <div class="slider-row"><span>Speaking Band</span><span class="val" id="speakVal">7.5</span></div>
+            <input type="range" id="speakSlider" min="4.0" max="9.0" step="0.5" value="7.5">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Speaking Simulator -->
+  <section class="section" id="cue-simulator">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono eyebrow">Interactive Speaking Simulator</span>
+        <h2>Part 2 Speaking Cue Card Drill</h2>
+        <p>Click to draw a genuine IELTS speaking cue card. Use the 1-minute planning timer, then deliver your 2-minute talk with structured cohesion.</p>
+      </div>
+
+      <div class="cue-tool">
+        <div class="cue-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="mono" style="color: var(--muted);" id="cueCategory">Topic: Technology &amp; Society</span>
+            <button class="btn btn-light" id="newCueBtn" style="min-height: 36px; padding: 6px 14px; font-size: .78rem;">🎲 Draw New Card</button>
+          </div>
+          <h3 id="cueTopic">Describe an electronic device that you find indispensable.</h3>
+          <p style="font-weight: 600; font-size: .88rem; margin: 0 0 8px;">You should say:</p>
+          <ul id="cuePoints">
+            <li>What device it is and when you acquired it</li>
+            <li>How often and for what purposes you use it</li>
+            <li>How it has changed your daily routine or productivity</li>
+            <li>And explain why you would find it difficult to live without it.</li>
+          </ul>
+          <div class="cue-timer">
+            <span>⏱️ Planning Timer (60s):</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="timer-val" id="timerCount">60s</span>
+              <button class="btn btn-dark" id="timerToggle" style="min-height: 34px; padding: 4px 12px; font-size: .75rem;">Start</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cue-strategies">
+          <div class="strat-box">
+            <strong>1. The "PPF" Tense Expansion Trick</strong>
+            <p>Don't stay in the present tense. Talk about the Past (how you used to manage before), the Present (your current routine), and the Future (how you anticipate it evolving).</p>
+          </div>
+          <div class="strat-box">
+            <strong>2. High-Yield Cohesive Signposts</strong>
+            <p>Replace <em>"and then"</em> with <em>"Consequently," "From a personal standpoint," "What struck me most was,"</em> and <em>"In hindsight."</em></p>
+          </div>
+          <div class="strat-box">
+            <strong>3. Idiomatic &amp; Collocational Precision</strong>
+            <p>Score Band 8 in Lexical Resource by using natural collocations: <em>"seamless integration," "drastically streamline," "second nature,"</em> and <em>"vital lifeline."</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching Programmes -->
+  <section class="section" style="background: var(--mist);">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono eyebrow">Structured Pathways</span>
+        <h2>IELTS Coaching Formats</h2>
+        <p>Whether you need an urgent 2-week band boost or complete 8-week mastery from A2 to Band 7.5+.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="plan-card">
+          <div>
+            <span class="mono" style="color: var(--blue);">Diagnostic &amp; Fast-Track</span>
+            <h3>Writing &amp; Speaking Audit</h3>
+            <p class="desc">For candidates testing in under 3 weeks who need immediate score error-proofing.</p>
+            <ul class="plan-features">
+              <li>Comprehensive 4-Skill diagnostic review</li>
+              <li>3 Full Writing Task 1 &amp; 2 sentence-by-sentence edits</li>
+              <li>Two 1:1 Live Mock Speaking examinations</li>
+              <li>Targeted error correction &amp; score trajectory plan</li>
+            </ul>
+          </div>
+          <a class="btn btn-light" href="index.html#consultation">Enquire for Fast-Track</a>
+        </div>
+
+        <div class="plan-card featured">
+          <span class="plan-tag">Most Popular</span>
+          <div>
+            <span class="mono" style="color: var(--blue-dark);">Complete Mastery</span>
+            <h3>1:1 Private IELTS Accelerator</h3>
+            <p class="desc">Intensive private coaching completely bespoke to your weak areas and target score.</p>
+            <ul class="plan-features">
+              <li>12 Focused 1:1 Private coaching sessions</li>
+              <li>Unlimited asynchronous Writing Task feedback</li>
+              <li>Real Cambridge &amp; British Council past paper drills</li>
+              <li>Direct WhatsApp tutor access for daily questions</li>
+              <li>Personalized flashcard sets &amp; vocabulary builder</li>
+            </ul>
+          </div>
+          <a class="btn btn-blue" href="index.html#consultation">Book 1:1 Accelerator</a>
+        </div>
+
+        <div class="plan-card">
+          <div>
+            <span class="mono" style="color: var(--blue);">Small Group (Max 4)</span>
+            <h3>VIP Band 7+ Cohort</h3>
+            <p class="desc">Collaborative 6-week sprint with fellow motivated candidates aiming for Band 7.5+.</p>
+            <ul class="plan-features">
+              <li>Weekly live 90-minute workshop &amp; breakout speaking</li>
+              <li>Peer writing reviews &amp; tutor breakdown</li>
+              <li>Complete IELTS resource pack + model band 9 essays</li>
+              <li>20% "Study Buddy" discount if joining with a friend</li>
+            </ul>
+          </div>
+          <a class="btn btn-dark" href="index.html#consultation">Join Next Cohort</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Consultation Modal -->
+  <div class="modal" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="consultationTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close consultation modal" id="closeConsultation">×</button>
+      <span class="mono">IELTS Coaching Consultation</span>
+      <h2 id="consultationTitle">Plan Your Band 7.5+ Roadmap</h2>
+      <p class="modal-lead" style="font-size: .88rem; color: var(--muted); margin: 6px 0 16px;">Speak with an IELTS specialist to assess your current score ceiling and choose between 1:1 acceleration or VIP cohort sprints.</p>
+      <form id="ieltsConsultForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="cName">Your Name</label>
+            <input id="cName" required placeholder="Full Name">
+          </div>
+          <div class="field">
+            <label for="cEmail">Email Address</label>
+            <input id="cEmail" type="email" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="cTarget">Target Band</label>
+            <select id="cTarget">
+              <option>Band 7.0 (Undergrad/Visa)</option>
+              <option selected>Band 7.5 (Postgrad/Scholarship)</option>
+              <option>Band 8.0+ (Top Tier Academic)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cFormat">Preferred Route</label>
+            <select id="cFormat">
+              <option>1:1 Private Accelerator</option>
+              <option>VIP Band 7+ Cohort (Max 4)</option>
+              <option>Writing &amp; Speaking Audit</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="cNotes">Current Scores or Weakest Skills</label>
+            <textarea id="cNotes" placeholder="e.g. Current score: 6.5. Need help organizing Task 2 essays and Part 3 speaking fluency."></textarea>
+          </div>
+        </div>
+        <button class="btn btn-blue" type="submit" style="width: 100%;">Request Free 15-Min Diagnostic Call</button>
+      </form>
+      <div id="ieltsSuccessMsg" style="display: none; text-align: center; padding: 24px 0;">
+        <span style="font-size: 2rem; color: var(--blue);">✓</span>
+        <h3 style="margin: 8px 0;">Diagnostic Request Received</h3>
+        <p style="font-size: .85rem; color: var(--muted); margin: 0 0 16px;">We'll contact you within 24 hours to confirm your diagnostic time.</p>
+        <button class="btn btn-dark" type="button" id="successDoneBtn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Quick-Connect -->
+  <div class="quick-connect">
+    <a class="quick-pill quick-pill-wa" href="https://wa.me/?text=Hello%20L.B.%20English%20Co.,%20I%20am%20preparing%20for%20IELTS%20and%20would%20like%20to%20learn%20more%20about%20your%20coaching%20programmes." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.12c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.69-.94-3.25-1.35-5.34-4.66-5.5-4.88-.16-.22-1.32-1.76-1.32-3.36s.83-2.39 1.12-2.72c.3-.33.65-.41.87-.41.22 0 .43.01.62.02.2.01.47-.08.73.55.27.65.92 2.25 1 2.41.08.16.14.36.03.58-.11.22-.16.36-.33.55-.16.2-.35.44-.5.59-.16.16-.33.34-.14.67.19.33.85 1.4 1.82 2.26 1.25 1.11 2.3 1.45 2.63 1.61.33.16.52.14.71-.08.19-.22.82-.95 1.04-1.28.22-.33.44-.27.73-.16.3.11 1.88.89 2.2 1.05.33.16.55.25.63.38.08.14.08.8-.16 1.48z"/></svg>
+      <span>WhatsApp Us</span>
+    </a>
+    <button class="quick-pill quick-pill-cal" type="button" data-open-consultation>
+      <span>📅 Book Free Call</span>
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color: #fff; font-size: 1.1rem;">L.B. English Co. · IELTS Academic &amp; General Preparation</strong>
+          <p style="margin: 6px 0 0; font-size: .8rem;">IELTS is a registered trademark of University of Cambridge ESOL, the British Council, and IDP Education Australia. L.B. English Co. is an independent preparation service.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Main Studio</a>
+          <a href="ydt-yds.html">YDT &amp; YDS Hub</a>
+          <a href="speaking.html">Speaking Studio</a>
+          <a href="resources.html">Free Library</a>
+          <a href="legal.html">Legal &amp; KVKK</a>
+        </div>
+      </div>
+      <div style="font-size: .75rem; color: #6b82a3;">
+        © <span id="year"></span> L.B. English Co. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation Mobile Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      navMenu.classList.toggle('open', !open);
+    });
+
+    // Modal Handling
+    const consultModal = document.getElementById('consultationModal');
+    const openConsultBtns = document.querySelectorAll('[data-open-consultation]');
+    const closeConsultBtn = document.getElementById('closeConsultation');
+    const successDoneBtn = document.getElementById('successDoneBtn');
+    const ieltsConsultForm = document.getElementById('ieltsConsultForm');
+    const ieltsSuccessMsg = document.getElementById('ieltsSuccessMsg');
+
+    openConsultBtns.forEach(btn => btn.addEventListener('click', () => {
+      consultModal.classList.add('open');
+      consultModal.setAttribute('aria-hidden', 'false');
+    }));
+
+    const closeConsult = () => {
+      consultModal.classList.remove('open');
+      consultModal.setAttribute('aria-hidden', 'true');
+    };
+
+    closeConsultBtn.addEventListener('click', closeConsult);
+    successDoneBtn.addEventListener('click', closeConsult);
+    consultModal.addEventListener('click', (e) => {
+      if (e.target === consultModal) closeConsult();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && consultModal.classList.contains('open')) closeConsult();
+    });
+
+    ieltsConsultForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      ieltsConsultForm.style.display = 'none';
+      ieltsSuccessMsg.style.display = 'block';
+    });
+
+    // Band Calculator Logic
+    const listenSlider = document.getElementById('listenSlider');
+    const readSlider = document.getElementById('readSlider');
+    const writeSlider = document.getElementById('writeSlider');
+    const speakSlider = document.getElementById('speakSlider');
+    
+    const listenVal = document.getElementById('listenVal');
+    const readVal = document.getElementById('readVal');
+    const writeVal = document.getElementById('writeVal');
+    const speakVal = document.getElementById('speakVal');
+    const overallBand = document.getElementById('overallBand');
+    const bandDesc = document.getElementById('bandDesc');
+
+    function updateBand() {
+      const l = parseFloat(listenSlider.value);
+      const r = parseFloat(readSlider.value);
+      const w = parseFloat(writeSlider.value);
+      const s = parseFloat(speakSlider.value);
+
+      listenVal.textContent = l.toFixed(1);
+      readVal.textContent = r.toFixed(1);
+      writeVal.textContent = w.toFixed(1);
+      speakVal.textContent = s.toFixed(1);
+
+      const avg = (l + r + w + s) / 4;
+      const decimal = avg - Math.floor(avg);
+      let rounded;
+      if (decimal < 0.25) rounded = Math.floor(avg);
+      else if (decimal < 0.75) rounded = Math.floor(avg) + 0.5;
+      else rounded = Math.ceil(avg);
+
+      overallBand.textContent = rounded.toFixed(1);
+      if (rounded >= 8.0) bandDesc.textContent = "C2 Level · Expert User (Top Tier Global Admissions)";
+      else if (rounded >= 7.0) bandDesc.textContent = "C1 Level · Good User (Meets Top University & Visa Criteria)";
+      else if (rounded >= 6.0) bandDesc.textContent = "B2 Level · Competent User (Standard Undergraduate / Work Requirement)";
+      else bandDesc.textContent = "B1 Level · Modest User (Foundational Fluency Needed)";
+    }
+
+    [listenSlider, readSlider, writeSlider, speakSlider].forEach(slider => {
+      slider.addEventListener('input', updateBand);
+    });
+
+    // Speaking Cue Card Bank
+    const cueCards = [
+      {
+        category: "Topic: Technology & Society",
+        topic: "Describe an electronic device that you find indispensable.",
+        points: [
+          "What device it is and when you acquired it",
+          "How often and for what purposes you use it",
+          "How it has changed your daily routine or productivity",
+          "And explain why you would find it difficult to live without it."
+        ]
+      },
+      {
+        category: "Topic: Environmental Decisions",
+        topic: "Describe an environmental initiative or law you would like to see implemented.",
+        points: [
+          "What the initiative or regulation is",
+          "Which environmental challenge it aims to solve",
+          "How everyday citizens and businesses would be affected",
+          "And explain why you believe it would be effective in the long term."
+        ]
+      },
+      {
+        category: "Topic: Memory & Personal History",
+        topic: "Describe a challenging situation in which you had to learn a skill very quickly.",
+        points: [
+          "What the situation was and what skill was required",
+          "Why you needed to acquire it under tight time constraints",
+          "The steps you took to practice or overcome obstacles",
+          "And explain how you felt once the situation was resolved."
+        ]
+      },
+      {
+        category: "Topic: Architecture & Public Spaces",
+        topic: "Describe a public park, library, or urban space in your city that you enjoy visiting.",
+        points: [
+          "Where it is situated and how it looks",
+          "What activities people engage in when they visit",
+          "How frequently you spend time there",
+          "And explain what makes this space valuable to the local community."
+        ]
+      }
+    ];
+
+    let currentCueIndex = 0;
+    const cueCategory = document.getElementById('cueCategory');
+    const cueTopic = document.getElementById('cueTopic');
+    const cuePoints = document.getElementById('cuePoints');
+    const newCueBtn = document.getElementById('newCueBtn');
+
+    newCueBtn.addEventListener('click', () => {
+      currentCueIndex = (currentCueIndex + 1) % cueCards.length;
+      const card = cueCards[currentCueIndex];
+      cueCategory.textContent = card.category;
+      cueTopic.textContent = card.topic;
+      cuePoints.innerHTML = card.points.map(p => `<li>${p}</li>`).join('');
+      resetTimer();
+    });
+
+    // Timer logic
+    let timerInterval = null;
+    let seconds = 60;
+    const timerCount = document.getElementById('timerCount');
+    const timerToggle = document.getElementById('timerToggle');
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      seconds = 60;
+      timerCount.textContent = '60s';
+      timerToggle.textContent = 'Start';
+      timerCount.style.color = '#b25e02';
+    }
+
+    timerToggle.addEventListener('click', () => {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        timerToggle.textContent = 'Resume';
+      } else {
+        timerToggle.textContent = 'Pause';
+        timerInterval = setInterval(() => {
+          seconds--;
+          timerCount.textContent = seconds + 's';
+          if (seconds <= 10) {
+            timerCount.style.color = '#e53935';
+          }
+          if (seconds <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            timerCount.textContent = "Time's Up! Speak now.";
+            timerToggle.textContent = 'Reset';
+          }
+        }, 1000);
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

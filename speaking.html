@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L.B. Speaking Studio &amp; Fluency Accelerator</title>
+  <meta name="description" content="Online conversational English coaching, real-time feedback, executive pitch rehearsal, and level-matched speaking rooms.">
+  <link rel="icon" href="assets/lb-english-co-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0d1b34;
+      --ink-2: #182a49;
+      --blue: #315bea;
+      --blue-dark: #1d42c3;
+      --sky: #91e5ff;
+      --lime: #c9f36b;
+      --paper: #ffffff;
+      --mist: #f4f7fb;
+      --line: #dce4ef;
+      --muted: #5e6c81;
+      --warm: #fff9ed;
+      --shadow: 0 20px 50px rgba(13, 27, 52, .1);
+      --radius: 20px;
+      --max: 1200px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .mono { font-family: "IBM Plex Mono", monospace; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue-dark); font-weight: 700; }
+    .eyebrow::before { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); content: ""; box-shadow: 0 0 0 4px rgba(49, 91, 234, .15); }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(16px);
+    }
+    .nav { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; }
+    .brand img { width: 52px; height: 34px; object-fit: contain; }
+    .brand strong { display: block; font-family: "Manrope", sans-serif; font-size: 1rem; font-weight: 800; line-height: 1; }
+    .brand small { display: block; margin-top: 4px; color: var(--muted); font: 600 .48rem "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-menu { display: flex; align-items: center; gap: 24px; }
+    .nav-link { font-weight: 600; font-size: .9rem; }
+    .nav-link:hover { color: var(--blue); }
+    
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: .88rem;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark { color: #fff; background: var(--ink); box-shadow: 0 10px 24px rgba(13, 27, 52, .15); }
+    .btn-dark:hover { background: var(--blue); }
+    .btn-blue { color: #fff; background: var(--blue); box-shadow: 0 10px 24px rgba(49, 91, 234, .2); }
+    .btn-blue:hover { background: var(--blue-dark); }
+    .btn-lime { background: var(--lime); color: var(--ink); }
+    .btn-light { border-color: var(--line); background: #fff; }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 70px;
+      background: radial-gradient(circle at 85% 15%, rgba(145, 229, 255, .4), transparent 40%), linear-gradient(135deg, #f9fbff 0%, #edf4ff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 50px; align-items: center; }
+    h1 { font-family: "Manrope", sans-serif; font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 1.04; letter-spacing: -.05em; margin: 18px 0 20px; }
+    .hero p { color: var(--muted); font-size: 1.1rem; line-height: 1.65; margin: 0 0 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Schedule Card */
+    .schedule-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .schedule-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+    .schedule-list { display: grid; gap: 12px; }
+    .session-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 16px;
+      background: var(--mist);
+    }
+    .session-day { font-family: "IBM Plex Mono", monospace; font-size: .8rem; font-weight: 700; color: var(--blue-dark); width: 44px; }
+    .session-info strong { display: block; font-size: .92rem; }
+    .session-info span { font-size: .75rem; color: var(--muted); }
+    .session-level { border-radius: 999px; padding: 4px 10px; background: #fff; border: 1px solid var(--line); font-size: .72rem; font-weight: 700; }
+
+    /* Sections */
+    .section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+    .section-head { text-align: center; max-width: 700px; margin: 0 auto 50px; }
+    .section-head h2 { font-family: "Manrope", sans-serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -.04em; margin: 12px 0 16px; }
+    .section-head p { color: var(--muted); font-size: 1.05rem; margin: 0; }
+
+    /* Buddy Banner */
+    .buddy-banner {
+      border: 2px solid var(--lime);
+      border-radius: 22px;
+      padding: 32px;
+      background: #f4fce8;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .buddy-banner h3 { margin: 0 0 6px; font-family: "Manrope", sans-serif; font-size: 1.5rem; color: #2d5a10; }
+    .buddy-banner p { margin: 0; color: #466c28; font-size: .95rem; }
+
+    /* Interactive Topic Drawer */
+    .topic-box {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 36px;
+      background: var(--mist);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .prompt-display {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+    }
+    .prompt-display h3 { margin: 0 0 12px; font-family: "Manrope", sans-serif; font-size: 1.35rem; color: var(--blue-dark); }
+    .prompt-display p { color: var(--ink-2); font-size: .95rem; line-height: 1.7; margin: 0 0 16px; }
+    .vocab-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .vocab-tag { border-radius: 8px; padding: 5px 10px; background: var(--mist); border: 1px solid var(--line); font-size: .78rem; font-weight: 600; color: var(--ink); }
+
+    /* Pricing Grid */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .plan-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px 28px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .plan-card.featured { border-color: var(--blue); box-shadow: 0 18px 45px rgba(49, 91, 234, .12); }
+    .plan-card h3 { font-family: "Manrope", sans-serif; font-size: 1.35rem; margin: 10px 0 6px; }
+    .plan-card p.desc { color: var(--muted); font-size: .86rem; margin: 0 0 20px; }
+    .plan-features { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 10px; font-size: .85rem; }
+    .plan-features li { display: flex; gap: 9px; align-items: start; }
+    .plan-features li::before { content: "✓"; color: var(--blue); font-weight: 800; }
+
+    /* Footer */
+    footer { padding: 60px 0 30px; background: var(--ink); color: #9bb0cd; }
+    .footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid rgba(255, 255, 255, .1); padding-bottom: 30px; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; font-size: .85rem; font-weight: 600; }
+    .footer-links a:hover { color: #fff; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 200;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--ink);
+      transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+
+    /* Mobile Menu */
+    .menu-button {
+      width: 44px;
+      height: 44px;
+      display: none;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .menu-button span, .menu-button::before, .menu-button::after {
+      width: 20px;
+      height: 2px;
+      display: block;
+      background: var(--ink);
+      content: "";
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .menu-button::before { transform: translateY(-5px); }
+    .menu-button::after { transform: translateY(5px); }
+    .menu-button[aria-expanded="true"] span { opacity: 0; }
+    .menu-button[aria-expanded="true"]::before { transform: translateY(2px) rotate(45deg); }
+    .menu-button[aria-expanded="true"]::after { transform: translateY(-2px) rotate(-45deg); }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      z-index: 300;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(7, 16, 31, .68);
+      backdrop-filter: blur(8px);
+    }
+    .modal.open { display: grid; }
+    .modal-card {
+      position: relative;
+      width: min(580px, 100%);
+      max-height: calc(100vh - 44px);
+      overflow-y: auto;
+      border-radius: 24px;
+      padding: 34px;
+      background: #fff;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .28);
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .8rem; font-weight: 700; }
+    .field input, .field select, .field textarea { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: .88rem; }
+    .field textarea { min-height: 80px; resize: vertical; }
+
+    /* Quick Connect */
+    .quick-connect { position: fixed; z-index: 120; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .quick-pill { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: .84rem; box-shadow: 0 12px 32px rgba(13, 27, 52, .18); cursor: pointer; text-decoration: none; }
+    .quick-pill:hover { transform: translateY(-3px); }
+    .quick-pill-wa { background: #25D366; color: #fff; border: 1px solid #1fa851; }
+    .quick-pill-cal { background: var(--ink); color: #fff; border: 1px solid rgba(255,255,255,.15); }
+    .quick-pill svg { width: 18px; height: 18px; fill: currentColor; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .topic-box, .buddy-banner, .grid-3 { grid-template-columns: 1fr; }
+      .nav-menu { position: fixed; inset: 80px 20px auto; display: none; flex-direction: column; align-items: stretch; gap: 12px; border: 1px solid var(--line); border-radius: 18px; padding: 20px; background: #fff; box-shadow: var(--shadow); }
+      .nav-menu.open { display: flex; }
+      .menu-button { display: grid; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/lb-english-co-mark.svg" alt="L.B. English Co." width="52" height="34">
+        <span>
+          <strong>L.B. English Co.</strong>
+          <small>Speaking Studio</small>
+        </span>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <a class="nav-link" href="index.html">Main Studio</a>
+        <a class="nav-link" href="ielts.html">IELTS Hub</a>
+        <a class="nav-link" href="ydt-yds.html">YDT &amp; YDS Hub</a>
+        <a class="nav-link" href="resources.html">Free Library</a>
+      </nav>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button class="btn btn-blue" type="button" data-open-consultation>Book 1:1 Fluency Session</button>
+        <button class="menu-button" type="button" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="mono eyebrow">Active Production &amp; Executive Fluency</span>
+        <h1>Stop Translating in Your Head. Speak with Spontaneous Clarity.</h1>
+        <p>Real-time conversational feedback, pronunciation calibration, and structured debates designed to build conversational stamina and professional polish.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#topic-simulator">Try Live Topic Simulator</a>
+          <a class="btn btn-lime" href="#pricing">See Speaking Formats</a>
+        </div>
+      </div>
+
+      <!-- Schedule Card -->
+      <div class="schedule-card">
+        <div class="schedule-header">
+          <strong>This Week's Live Speaking Rooms</strong>
+          <span class="mono" style="color: var(--blue);">Level-Matched</span>
+        </div>
+        <div class="schedule-list">
+          <div class="session-row">
+            <span class="session-day">MON</span>
+            <div class="session-info">
+              <strong>Global Innovation &amp; Ethics</strong>
+              <span>Debating the impact of generative AI in high-stakes careers</span>
+            </div>
+            <span class="session-level">B2 - C1</span>
+          </div>
+          <div class="session-row">
+            <span class="session-day">WED</span>
+            <div class="session-info">
+              <strong>High-Stakes Negotiations</strong>
+              <span>Persuasion, diplomatic disagreement &amp; closing agreements</span>
+            </div>
+            <span class="session-level">B1 - B2</span>
+          </div>
+          <div class="session-row">
+            <span class="session-day">FRI</span>
+            <div class="session-info">
+              <strong>Executive Pitch &amp; Storytelling</strong>
+              <span>Structuring 3-minute compelling project presentations</span>
+            </div>
+            <span class="session-level">All Levels</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Study Buddy Banner -->
+  <section class="section" style="padding-bottom: 0; border-bottom: 0;">
+    <div class="container">
+      <div class="buddy-banner">
+        <div>
+          <h3>👥 "Study Buddy" Dual Enrollment</h3>
+          <p>Join any VIP Speaking Cohort with a friend or colleague and both receive <strong>20% off</strong> all monthly memberships. Learn and practice together.</p>
+        </div>
+        <a class="btn btn-dark" href="index.html#consultation">Claim 20% Buddy Rate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Topic Simulator -->
+  <section class="section" id="topic-simulator">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono eyebrow">Interactive Conversation Lab</span>
+        <h2>Spontaneous Speaking Prompt Generator</h2>
+        <p>Hit the generator below to test your ability to structure a coherent 90-second response with high-impact vocabulary.</p>
+      </div>
+
+      <div class="topic-box">
+        <div class="prompt-display">
+          <span class="mono" style="color: var(--muted); margin-bottom: 8px; display: block;" id="promptCat">Category: Workplace Psychology</span>
+          <h3 id="promptTitle">"Is remote work making professional collaboration more transactional?"</h3>
+          <p id="promptDesc">Discuss how distributed teams manage spontaneous brainstorming versus scheduled efficiency. Provide one personal example and one forward-looking forecast.</p>
+          <div style="margin-top: 18px;">
+            <strong style="display: block; font-size: .84rem; margin-bottom: 8px;">Key Vocabulary to Integrate:</strong>
+            <div class="vocab-tags" id="promptTags">
+              <span class="vocab-tag">Serendipitous exchange</span>
+              <span class="vocab-tag">Diminishing rapport</span>
+              <span class="vocab-tag">Frictionless coordination</span>
+              <span class="vocab-tag">Cross-functional synergy</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn btn-blue" id="nextPromptBtn" style="width: 100%; margin-bottom: 16px;">🎲 Draw New Conversation Topic</button>
+          <div style="background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px;">
+            <strong style="display: block; font-size: .95rem; margin-bottom: 6px;">How We Coach This 1:1:</strong>
+            <p style="margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.6;">
+              In our live speaking rooms, you receive real-time sentence restructuring, phoneme pronunciation corrections, and actionable vocabulary feedback after every talk.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formats -->
+  <section class="section" id="pricing" style="background: var(--mist);">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono eyebrow">Studio Formats</span>
+        <h2>Choose Your Speaking Track</h2>
+        <p>Private 1:1 acceleration or immersive small-group interaction.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="plan-card">
+          <div>
+            <span class="mono" style="color: var(--blue);">Small Group (Max 4)</span>
+            <h3>VIP Speaking Cohort</h3>
+            <p class="desc">Weekly live conversation sessions with level-matched peers and direct coaching notes.</p>
+            <ul class="plan-features">
+              <li>2 Live 60-min sessions weekly</li>
+              <li>Personal error-correction sheet after every call</li>
+              <li>Access to weekly topic preparation dossiers</li>
+              <li>Eligible for 20% Study Buddy discount</li>
+            </ul>
+          </div>
+          <a class="btn btn-light" href="index.html#consultation">Enquire for Cohort</a>
+        </div>
+
+        <div class="plan-card featured">
+          <div>
+            <span class="mono" style="color: var(--blue-dark);">Bespoke 1:1</span>
+            <h3>1:1 Fluency Accelerator</h3>
+            <p class="desc">Intensive 1:1 coaching targeting your exact hesitation points, accent habits, and vocabulary gaps.</p>
+            <ul class="plan-features">
+              <li>Custom timetable (flexible scheduling)</li>
+              <li>Deep pronunciation &amp; intonation calibration</li>
+              <li>Recorded session breakdown &amp; transcripts</li>
+              <li>Direct tutor audio voice notes on WhatsApp</li>
+            </ul>
+          </div>
+          <a class="btn btn-blue" href="index.html#consultation">Book 1:1 Accelerator</a>
+        </div>
+
+        <div class="plan-card">
+          <div>
+            <span class="mono" style="color: var(--blue);">Executive / Corporate</span>
+            <h3>Pitch &amp; Interview Sprint</h3>
+            <p class="desc">Focused 4-session rehearsal for job interviews, keynote speeches, or international client pitches.</p>
+            <ul class="plan-features">
+              <li>Real slide deck &amp; talking-point review</li>
+              <li>Q&amp;A stress-testing &amp; dynamic rebuttal drill</li>
+              <li>Body language &amp; vocal pacing adjustments</li>
+            </ul>
+          </div>
+          <a class="btn btn-dark" href="index.html#consultation">Book Pitch Sprint</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Consultation Modal -->
+  <div class="modal" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="consultationTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close modal" id="closeConsultation">×</button>
+      <span class="mono">Speaking Assessment &amp; Placement</span>
+      <h2 id="consultationTitle">Book Your 1:1 Speaking Evaluation</h2>
+      <p class="modal-lead" style="font-size: .88rem; color: var(--muted); margin: 6px 0 16px;">Schedule a 15-minute diagnostic call to assess your active fluency level, identify pronunciation priorities, and place you in the ideal speaking room.</p>
+      <form id="speakConsultForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="cName">Full Name</label>
+            <input id="cName" required placeholder="Your Name">
+          </div>
+          <div class="field">
+            <label for="cEmail">Email Address</label>
+            <input id="cEmail" type="email" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="cGoal">Primary Focus</label>
+            <select id="cGoal">
+              <option selected>Executive / Business Fluency</option>
+              <option>Spontaneous Conversation &amp; Confidence</option>
+              <option>Job Interview / Pitch Preparation</option>
+              <option>IELTS / TOEFL Speaking Score</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cTrack">Preferred Track</label>
+            <select id="cTrack">
+              <option>1:1 Fluency Accelerator</option>
+              <option>VIP Speaking Cohort (Max 4)</option>
+              <option>Pitch &amp; Interview Sprint</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="cNotes">What holds your speaking back?</label>
+            <textarea id="cNotes" placeholder="e.g. I hesitate when trying to find exact vocabulary in meetings; I want to speak without translating from my native language."></textarea>
+          </div>
+        </div>
+        <button class="btn btn-blue" type="submit" style="width: 100%;">Request Free Speaking Evaluation</button>
+      </form>
+      <div id="speakSuccessMsg" style="display: none; text-align: center; padding: 24px 0;">
+        <span style="font-size: 2rem; color: var(--blue);">✓</span>
+        <h3 style="margin: 8px 0;">Evaluation Request Received</h3>
+        <p style="font-size: .85rem; color: var(--muted); margin: 0 0 16px;">We'll reach out within 24 hours to schedule your live 15-minute diagnostic.</p>
+        <button class="btn btn-dark" type="button" id="successDoneBtn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Quick-Connect -->
+  <div class="quick-connect">
+    <a class="quick-pill quick-pill-wa" href="https://wa.me/?text=Hello%20L.B.%20English%20Co.,%20I%20am%20interested%20in%20the%20Speaking%20Studio%20and%20fluency%20programmes." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.12c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.69-.94-3.25-1.35-5.34-4.66-5.5-4.88-.16-.22-1.32-1.76-1.32-3.36s.83-2.39 1.12-2.72c.3-.33.65-.41.87-.41.22 0 .43.01.62.02.2.01.47-.08.73.55.27.65.92 2.25 1 2.41.08.16.14.36.03.58-.11.22-.16.36-.33.55-.16.2-.35.44-.5.59-.16.16-.33.34-.14.67.19.33.85 1.4 1.82 2.26 1.25 1.11 2.3 1.45 2.63 1.61.33.16.52.14.71-.08.19-.22.82-.95 1.04-1.28.22-.33.44-.27.73-.16.3.11 1.88.89 2.2 1.05.33.16.55.25.63.38.08.14.08.8-.16 1.48z"/></svg>
+      <span>WhatsApp Us</span>
+    </a>
+    <button class="quick-pill quick-pill-cal" type="button" data-open-consultation>
+      <span>📅 Book Free Call</span>
+    </button>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color: #fff; font-size: 1.1rem;">L.B. English Co. · Speaking Studio</strong>
+          <p style="margin: 6px 0 0; font-size: .8rem;">Dedicated active fluency acceleration and professional communication coaching.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Main Studio</a>
+          <a href="ielts.html">IELTS Hub</a>
+          <a href="ydt-yds.html">YDT &amp; YDS Hub</a>
+          <a href="resources.html">Free Library</a>
+          <a href="legal.html">Legal &amp; KVKK</a>
+        </div>
+      </div>
+      <div style="font-size: .75rem; color: #6b82a3;">
+        © <span id="year"></span> L.B. English Co. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation Mobile Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      navMenu.classList.toggle('open', !open);
+    });
+
+    // Modal Handling
+    const consultModal = document.getElementById('consultationModal');
+    const openConsultBtns = document.querySelectorAll('[data-open-consultation]');
+    const closeConsultBtn = document.getElementById('closeConsultation');
+    const successDoneBtn = document.getElementById('successDoneBtn');
+    const speakConsultForm = document.getElementById('speakConsultForm');
+    const speakSuccessMsg = document.getElementById('speakSuccessMsg');
+
+    openConsultBtns.forEach(btn => btn.addEventListener('click', () => {
+      consultModal.classList.add('open');
+      consultModal.setAttribute('aria-hidden', 'false');
+    }));
+
+    const closeConsult = () => {
+      consultModal.classList.remove('open');
+      consultModal.setAttribute('aria-hidden', 'true');
+    };
+
+    closeConsultBtn.addEventListener('click', closeConsult);
+    successDoneBtn.addEventListener('click', closeConsult);
+    consultModal.addEventListener('click', (e) => {
+      if (e.target === consultModal) closeConsult();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && consultModal.classList.contains('open')) closeConsult();
+    });
+
+    speakConsultForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      speakConsultForm.style.display = 'none';
+      speakSuccessMsg.style.display = 'block';
+    });
+
+    const topics = [
+      {
+        category: "Category: Workplace Psychology",
+        title: '"Is remote work making professional collaboration more transactional?"',
+        desc: "Discuss how distributed teams manage spontaneous brainstorming versus scheduled efficiency. Provide one personal example and one forward-looking forecast.",
+        tags: ["Serendipitous exchange", "Diminishing rapport", "Frictionless coordination", "Cross-functional synergy"]
+      },
+      {
+        category: "Category: Cultural Shifts",
+        title: '"Should cities prioritize historic architectural preservation over affordable modern housing?"',
+        desc: "Analyze the aesthetic and economic trade-offs of preserving cultural heritage in high-density metropolitan areas.",
+        tags: ["Gentrification pressures", "Architectural pedigree", "Urban revitalization", "High-density zoning"]
+      },
+      {
+        category: "Category: Personal Growth",
+        title: '"Is hyper-specialization in one domain superior to broad generalist adaptability?"',
+        desc: "Evaluate how career longevity is affected by narrow deep expertise versus multifaceted creative problem solving.",
+        tags: ["T-shaped skillset", "Cognitive flexibility", "Domain obsolescence", "Interdisciplinary synthesis"]
+      }
+    ];
+
+    let tIdx = 0;
+    const promptCat = document.getElementById('promptCat');
+    const promptTitle = document.getElementById('promptTitle');
+    const promptDesc = document.getElementById('promptDesc');
+    const promptTags = document.getElementById('promptTags');
+    const nextPromptBtn = document.getElementById('nextPromptBtn');
+
+    nextPromptBtn.addEventListener('click', () => {
+      tIdx = (tIdx + 1) % topics.length;
+      const t = topics[tIdx];
+      promptCat.textContent = t.category;
+      promptTitle.textContent = t.title;
+      promptDesc.textContent = t.desc;
+      promptTags.innerHTML = t.tags.map(tag => `<span class="vocab-tag">${tag}</span>`).join('');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

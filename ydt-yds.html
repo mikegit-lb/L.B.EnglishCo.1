@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YDT, YDS &amp; YÖKDİL Hazırlık ve Strateji Merkezi | L.B. English Co.</title>
+  <meta name="description" content="YKS-Dil (YDT), YDS ve YÖKDİL sınavlarına yönelik stratejik özel ders, net artırma taktikleri, akademik kelime çalışmaları ve kişiye özel çalışma programları.">
+  <link rel="icon" href="assets/lb-english-co-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0d1b34;
+      --ink-2: #182a49;
+      --blue: #315bea;
+      --blue-dark: #1d42c3;
+      --sky: #91e5ff;
+      --lime: #c9f36b;
+      --paper: #ffffff;
+      --mist: #f4f7fb;
+      --line: #dce4ef;
+      --muted: #5e6c81;
+      --shadow: 0 20px 50px rgba(13, 27, 52, .1);
+      --radius: 20px;
+      --max: 1200px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .mono { font-family: "IBM Plex Mono", monospace; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue-dark); font-weight: 700; }
+    .eyebrow::before { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); content: ""; box-shadow: 0 0 0 4px rgba(49, 91, 234, .15); }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(16px);
+    }
+    .nav { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; }
+    .brand img { width: 52px; height: 34px; object-fit: contain; }
+    .brand strong { display: block; font-family: "Manrope", sans-serif; font-size: 1rem; font-weight: 800; line-height: 1; }
+    .brand small { display: block; margin-top: 4px; color: var(--muted); font: 600 .48rem "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-menu { display: flex; align-items: center; gap: 24px; }
+    .nav-link { font-weight: 600; font-size: .9rem; }
+    .nav-link:hover { color: var(--blue); }
+    
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: .88rem;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark { color: #fff; background: var(--ink); box-shadow: 0 10px 24px rgba(13, 27, 52, .15); }
+    .btn-dark:hover { background: var(--blue); }
+    .btn-blue { color: #fff; background: var(--blue); box-shadow: 0 10px 24px rgba(49, 91, 234, .2); }
+    .btn-blue:hover { background: var(--blue-dark); }
+    .btn-lime { background: var(--lime); color: var(--ink); }
+    .btn-light { border-color: var(--line); background: #fff; }
+    
+    /* Hero */
+    .hero {
+      padding: 90px 0 70px;
+      background: radial-gradient(circle at 75% 25%, rgba(201, 243, 107, .3), transparent 38%), linear-gradient(135deg, #f7faff 0%, #edf3fc 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; }
+    h1 { font-family: "Manrope", sans-serif; font-size: clamp(2.4rem, 4.8vw, 4rem); line-height: 1.05; letter-spacing: -.05em; margin: 18px 0 20px; }
+    .hero p { color: var(--muted); font-size: 1.08rem; line-height: 1.65; margin: 0 0 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    
+    /* Net Calculator Card */
+    .calc-box {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    .calc-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .calc-title strong { font-family: "Manrope", sans-serif; font-size: 1.2rem; }
+    .net-display {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .net-display .net-num { font-family: "Manrope", sans-serif; font-size: 3.4rem; font-weight: 800; line-height: 1; color: var(--lime); }
+    .net-display span { font-size: .85rem; color: #b7c8df; display: block; margin-top: 6px; }
+    .inputs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+    .input-field { display: grid; gap: 6px; }
+    .input-field label { font-size: .84rem; font-weight: 700; color: var(--ink-2); }
+    .input-field input { border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font-size: 1rem; font-weight: 700; }
+    
+    /* Section */
+    .section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto 50px; }
+    .section-head h2 { font-family: "Manrope", sans-serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -.04em; margin: 12px 0 16px; }
+    .section-head p { color: var(--muted); font-size: 1.05rem; margin: 0; }
+    
+    /* Question Matrix */
+    .tactics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .tactic-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      background: #fff;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+    .tactic-card:hover { transform: translateY(-3px); border-color: var(--blue); }
+    .tactic-card .tactic-no { color: var(--blue); font-family: "IBM Plex Mono", monospace; font-size: .8rem; font-weight: 700; margin-bottom: 8px; display: block; }
+    .tactic-card h3 { margin: 0 0 8px; font-family: "Manrope", sans-serif; font-size: 1.15rem; }
+    .tactic-card p { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.55; }
+    
+    /* Vocab Vault Drill */
+    .vocab-drill {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 36px;
+      background: var(--mist);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .flashcard {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      padding: 32px;
+      box-shadow: 0 14px 35px rgba(13, 27, 52, .08);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .flashcard .word { font-family: "Manrope", sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--blue-dark); margin: 6px 0; }
+    .flashcard .type { font-family: "IBM Plex Mono", monospace; color: var(--muted); font-size: .75rem; }
+    .flashcard .meaning { font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 12px 0 6px; display: none; }
+    .flashcard .meaning.show { display: block; }
+    .flashcard .sample { font-size: .85rem; color: var(--muted); font-style: italic; display: none; }
+    .flashcard .sample.show { display: block; }
+
+    /* Footer */
+    footer { padding: 60px 0 30px; background: var(--ink); color: #9bb0cd; }
+    .footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid rgba(255, 255, 255, .1); padding-bottom: 30px; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; font-size: .85rem; font-weight: 600; }
+    .footer-links a:hover { color: #fff; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 200;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--ink);
+      transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+
+    /* Mobile Menu */
+    .menu-button {
+      width: 44px;
+      height: 44px;
+      display: none;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .menu-button span, .menu-button::before, .menu-button::after {
+      width: 20px;
+      height: 2px;
+      display: block;
+      background: var(--ink);
+      content: "";
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .menu-button::before { transform: translateY(-5px); }
+    .menu-button::after { transform: translateY(5px); }
+    .menu-button[aria-expanded="true"] span { opacity: 0; }
+    .menu-button[aria-expanded="true"]::before { transform: translateY(2px) rotate(45deg); }
+    .menu-button[aria-expanded="true"]::after { transform: translateY(-2px) rotate(-45deg); }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      z-index: 300;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(7, 16, 31, .68);
+      backdrop-filter: blur(8px);
+    }
+    .modal.open { display: grid; }
+    .modal-card {
+      position: relative;
+      width: min(580px, 100%);
+      max-height: calc(100vh - 44px);
+      overflow-y: auto;
+      border-radius: 24px;
+      padding: 34px;
+      background: #fff;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .28);
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .8rem; font-weight: 700; }
+    .field input, .field select, .field textarea { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: .88rem; }
+    .field textarea { min-height: 80px; resize: vertical; }
+
+    /* Quick Connect */
+    .quick-connect { position: fixed; z-index: 120; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .quick-pill { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: .84rem; box-shadow: 0 12px 32px rgba(13, 27, 52, .18); cursor: pointer; text-decoration: none; }
+    .quick-pill:hover { transform: translateY(-3px); }
+    .quick-pill-wa { background: #25D366; color: #fff; border: 1px solid #1fa851; }
+    .quick-pill-cal { background: var(--ink); color: #fff; border: 1px solid rgba(255,255,255,.15); }
+    .quick-pill svg { width: 18px; height: 18px; fill: currentColor; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .vocab-drill { grid-template-columns: 1fr; }
+      .tactics-grid { grid-template-columns: 1fr; }
+      .nav-menu { position: fixed; inset: 80px 20px auto; display: none; flex-direction: column; align-items: stretch; gap: 12px; border: 1px solid var(--line); border-radius: 18px; padding: 20px; background: #fff; box-shadow: var(--shadow); }
+      .nav-menu.open { display: flex; }
+      .menu-button { display: grid; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">İçeriğe Atla</a>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/lb-english-co-mark.svg" alt="L.B. English Co." width="52" height="34">
+        <span>
+          <strong>L.B. English Co.</strong>
+          <small>YDT &amp; YDS Strateji Merkezi</small>
+        </span>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Ana Menü">
+        <a class="nav-link" href="index.html">Ana Stüdyo</a>
+        <a class="nav-link" href="ielts.html">IELTS Hub</a>
+        <a class="nav-link" href="speaking.html">Speaking Studio</a>
+        <a class="nav-link" href="resources.html">Ücretsiz Kütüphane</a>
+      </nav>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button class="btn btn-blue" type="button" data-open-consultation>Ücretsiz Seviye Analizi</button>
+        <button class="menu-button" type="button" id="menuBtn" aria-label="Menüyü aç/kapat" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="mono eyebrow">YKS-DİL (YDT) · YDS · YÖKDİL</span>
+        <h1>Soru Tiplerinde Ezber Değil, Stratejik Çözüm Refleksi.</h1>
+        <p>Kelime haznesi ve dilbilgisi kurallarını sınav formatına dönüştürün. Paragraf analizi, bağlaç mantığı ve çeldirici eleme taktikleriyle netlerinizi zirveye taşıyın.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#net-hesaplama">YDT Net Hesaplama</a>
+          <a class="btn btn-light" href="#kelime-drilli">Akademik Kelime Kartları</a>
+        </div>
+      </div>
+
+      <!-- Net Calculator -->
+      <div class="calc-box" id="net-hesaplama">
+        <div class="calc-title">
+          <strong>YDT (80 Soru) Net Hesaplayıcı</strong>
+          <span class="mono" style="color: var(--blue);">ÖSYM Formatı</span>
+        </div>
+        <div class="net-display">
+          <div class="net-num" id="ydtNet">72.50</div>
+          <span id="netStatus">Hedef: İlk 2.000 / Prestijli İngiliz Dili &amp; Çeviribilim Programları</span>
+        </div>
+        <div class="inputs-grid">
+          <div class="input-field">
+            <label for="dogruInput">Doğru Sayısı (0-80)</label>
+            <input type="number" id="dogruInput" min="0" max="80" value="74">
+          </div>
+          <div class="input-field">
+            <label for="yanlisInput">Yanlış Sayısı (0-80)</label>
+            <input type="number" id="yanlisInput" min="0" max="80" value="6">
+          </div>
+        </div>
+        <p style="font-size: .75rem; color: var(--muted); margin: 0;">*ÖSYM standardında 4 yanlış 1 doğruyu götürür (Net = Doğru - Yanlış/4).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Question Breakdown & Tactics -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono eyebrow">Soru Tipleri &amp; Taktikler</span>
+        <h2>Puan Kazandıran Soru Çözüm Stratejileri</h2>
+        <p>YDS, YÖKDİL ve YDT'de zaman kaybettiren çeldiricileri hızla eleyin.</p>
+      </div>
+
+      <div class="tactics-grid">
+        <div class="tactic-card">
+          <span class="tactic-no">Soru Tipi 01</span>
+          <h3>Cloze Test &amp; Gramer</h3>
+          <p>Tense uyumu, Relative Clauses kısaltmaları ve Preposition kombinasyonlarında bağlam ipuçlarını okuma refleksi geliştirin.</p>
+        </div>
+        <div class="tactic-card">
+          <span class="tactic-no">Soru Tipi 02</span>
+          <h3>Cümle Tamamlama</h3>
+          <p>Zıtlık (Although, Whereas), Sebep-Sonuç (Owing to, Since) ve Koşul bağlaçlarında özne-yüklem referans takibi yapın.</p>
+        </div>
+        <div class="tactic-card">
+          <span class="tactic-no">Soru Tipi 03</span>
+          <h3>Paragraf &amp; Anlam Bütünlüğü</h3>
+          <p>Metin akışını bozan cümlede 'pronoun' referanslarına ve konu kapsamının daralıp genişlemesine dikkat edin.</p>
+        </div>
+        <div class="tactic-card">
+          <span class="tactic-no">Soru Tipi 04</span>
+          <h3>İngilizce - Türkçe Çeviri</h3>
+          <p>Cümlenin ana yüklemini ve temel öznesini bularak seçeneklerin %80'ini 15 saniye içinde eleyin.</p>
+        </div>
+        <div class="tactic-card">
+          <span class="tactic-no">Soru Tipi 05</span>
+          <h3>Diyalog &amp; Durum Soruları</h3>
+          <p>Konuşmacıların samimiyet derecesi (formal vs. informal) ve cevabın arkasındaki örtülü anlamı yakalayın.</p>
+        </div>
+        <div class="tactic-card">
+          <span class="tactic-no">Soru Tipi 06</span>
+          <h3>Restatement (Yakın Anlam)</h3>
+          <p>Modal yapıları, zaman zarfları ve miktar bildiren ifadeleri (only, rarely, predominantly) eşleştirin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Vocab Drill -->
+  <section class="section" id="kelime-drilli">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono eyebrow">İnteraktif Çalışma</span>
+        <h2>YDS &amp; YDT Sık Çıkan Akademik Kelimeler</h2>
+        <p>Her sınavda karşınıza çıkan kilit kelimeleri ve phrasal verb'leri test edin.</p>
+      </div>
+
+      <div class="vocab-drill">
+        <div class="flashcard">
+          <div>
+            <span class="type" id="vType">Verb / Eylem</span>
+            <div class="word" id="vWord">Deteriorate</div>
+            <div class="meaning" id="vMeaning">Kötüleşmek, bozulmak, gerilemek</div>
+            <div class="sample" id="vSample">"The patient's condition began to deteriorate rapidly after the operation."</div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <button class="btn btn-dark" id="revealBtn" style="flex: 1;">Anlamı Göster</button>
+            <button class="btn btn-light" id="nextWordBtn" style="flex: 1;">Sonraki Kelime ➔</button>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family: 'Manrope', sans-serif; font-size: 1.6rem; margin: 0 0 14px;">Nasıl Çalışılmalı?</h3>
+          <p style="color: var(--muted); font-size: .95rem; line-height: 1.7; margin-bottom: 20px;">
+            ÖSYM sınavlarında kelimeleri tek başına ezberlemek yerine <strong>collocation (birlikte kullanılan sözcükler)</strong> ve <strong>preposition (edat)</strong> ilişkileriyle öğrenmek sınav hızınızı 2 katına çıkarır.
+          </p>
+          <div style="background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px;">
+            <strong style="display: block; margin-bottom: 6px; font-size: .92rem;">💡 Sınav İpucu:</strong>
+            <span style="font-size: .84rem; color: var(--muted);">Örneğin "attribute" kelimesi neredeyse her zaman "... e atfetmek, bağlamak" anlamında <strong>"attribute to"</strong> kalıbıyla sorulur.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Consultation Modal -->
+  <div class="modal" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="consultationTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Modalı kapat" id="closeConsultation">×</button>
+      <span class="mono">Ücretsiz Strateji Görüşmesi</span>
+      <h2 id="consultationTitle">Hedeflediğin Net ve Puanı Birlikte Planlayalım</h2>
+      <p class="modal-lead" style="font-size: .88rem; color: var(--muted); margin: 6px 0 16px;">Mevcut netlerini, eksik hissettiğin soru tiplerini ve hedef üniversite/bölümünü paylaş. İlk 15 dakikalık analiz görüşmesinde sana özel yol haritasını çıkaralım.</p>
+      <form id="ydtConsultForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="cName">Ad Soyad</label>
+            <input id="cName" required placeholder="Adınız Soyadınız">
+          </div>
+          <div class="field">
+            <label for="cEmail">E-posta</label>
+            <input id="cEmail" type="email" required placeholder="ornek@eposta.com">
+          </div>
+          <div class="field">
+            <label for="cExam">Hedef Sınav</label>
+            <select id="cExam">
+              <option selected>YDT (YKS-DİL)</option>
+              <option>YDS (Akademik/Kamu)</option>
+              <option>YÖKDİL (Sağlık / Fen / Sosyal)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cFormat">Ders Formatı</label>
+            <select id="cFormat">
+              <option>Birebir Özel Koçluk (1:1)</option>
+              <option>VIP Küçük Grup (3-4 Kişi)</option>
+              <option>Sadece Strateji &amp; Soru Analizi Danışmanlığı</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="cNotes">Mevcut Net / Soru Tipi Sorunları</label>
+            <textarea id="cNotes" placeholder="Örn: YDT netim 55 civarında. Paragraf ve cümle tamamlama sorularında çok zaman kaybediyorum. Hedefim Boğaziçi ELT."></textarea>
+          </div>
+        </div>
+        <button class="btn btn-blue" type="submit" style="width: 100%;">Ücretsiz Analiz Görüşmesi Talep Et</button>
+      </form>
+      <div id="ydtSuccessMsg" style="display: none; text-align: center; padding: 24px 0;">
+        <span style="font-size: 2rem; color: var(--blue);">✓</span>
+        <h3 style="margin: 8px 0;">Görüşme Talebiniz Alındı</h3>
+        <p style="font-size: .85rem; color: var(--muted); margin: 0 0 16px;">En geç 24 saat içinde sizinle iletişime geçerek uygun görüşme saatini belirleyeceğiz.</p>
+        <button class="btn btn-dark" type="button" id="successDoneBtn">Tamam</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Quick-Connect -->
+  <div class="quick-connect">
+    <a class="quick-pill quick-pill-wa" href="https://wa.me/?text=Merhaba%20L.B.%20English%20Co.,%20YDT%20ve%20YDS%20hazırlık%20programlarınız%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.12c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.69-.94-3.25-1.35-5.34-4.66-5.5-4.88-.16-.22-1.32-1.76-1.32-3.36s.83-2.39 1.12-2.72c.3-.33.65-.41.87-.41.22 0 .43.01.62.02.2.01.47-.08.73.55.27.65.92 2.25 1 2.41.08.16.14.36.03.58-.11.22-.16.36-.33.55-.16.2-.35.44-.5.59-.16.16-.33.34-.14.67.19.33.85 1.4 1.82 2.26 1.25 1.11 2.3 1.45 2.63 1.61.33.16.52.14.71-.08.19-.22.82-.95 1.04-1.28.22-.33.44-.27.73-.16.3.11 1.88.89 2.2 1.05.33.16.55.25.63.38.08.14.08.8-.16 1.48z"/></svg>
+      <span>WhatsApp'tan Yazın</span>
+    </a>
+    <button class="quick-pill quick-pill-cal" type="button" data-open-consultation>
+      <span>📅 Ücretsiz Görüşme</span>
+    </button>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color: #fff; font-size: 1.1rem;">L.B. English Co. · YDT, YDS &amp; YÖKDİL Hazırlık</strong>
+          <p style="margin: 6px 0 0; font-size: .8rem;">YKS, YDT, YDS ve YÖKDİL isimleri ÖSYM'ye aittir. L.B. English Co. bağımsız bir özel eğitim ve sınav stratejisi merkezidir.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Ana Sayfa</a>
+          <a href="ielts.html">IELTS Hub</a>
+          <a href="speaking.html">Speaking Studio</a>
+          <a href="resources.html">Ücretsiz Kütüphane</a>
+          <a href="legal.html">Yasal Bilgiler</a>
+        </div>
+      </div>
+      <div style="font-size: .75rem; color: #6b82a3;">
+        © <span id="year"></span> L.B. English Co. Tüm hakları saklıdır.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation Mobile Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      navMenu.classList.toggle('open', !open);
+    });
+
+    // Modal Handling
+    const consultModal = document.getElementById('consultationModal');
+    const openConsultBtns = document.querySelectorAll('[data-open-consultation]');
+    const closeConsultBtn = document.getElementById('closeConsultation');
+    const successDoneBtn = document.getElementById('successDoneBtn');
+    const ydtConsultForm = document.getElementById('ydtConsultForm');
+    const ydtSuccessMsg = document.getElementById('ydtSuccessMsg');
+
+    openConsultBtns.forEach(btn => btn.addEventListener('click', () => {
+      consultModal.classList.add('open');
+      consultModal.setAttribute('aria-hidden', 'false');
+    }));
+
+    const closeConsult = () => {
+      consultModal.classList.remove('open');
+      consultModal.setAttribute('aria-hidden', 'true');
+    };
+
+    closeConsultBtn.addEventListener('click', closeConsult);
+    successDoneBtn.addEventListener('click', closeConsult);
+    consultModal.addEventListener('click', (e) => {
+      if (e.target === consultModal) closeConsult();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && consultModal.classList.contains('open')) closeConsult();
+    });
+
+    ydtConsultForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      ydtConsultForm.style.display = 'none';
+      ydtSuccessMsg.style.display = 'block';
+    });
+
+    // Net Calculator Logic
+    const dogruInput = document.getElementById('dogruInput');
+    const yanlisInput = document.getElementById('yanlisInput');
+    const ydtNet = document.getElementById('ydtNet');
+    const netStatus = document.getElementById('netStatus');
+
+    function calcNet() {
+      let d = Math.max(0, Math.min(80, parseFloat(dogruInput.value) || 0));
+      let y = Math.max(0, Math.min(80, parseFloat(yanlisInput.value) || 0));
+      if (d + y > 80) {
+        y = 80 - d;
+        yanlisInput.value = y;
+      }
+      const net = Math.max(0, d - (y / 4));
+      ydtNet.textContent = net.toFixed(2);
+
+      if (net >= 73) netStatus.textContent = "🔥 Hedef: İlk 1.000 (Boğaziçi, ODTÜ, Hacettepe İngilizce Öğretmenliği & Çeviribilim)";
+      else if (net >= 65) netStatus.textContent = "🎯 Hedef: İlk 5.000 (Köklü Devlet Üniversiteleri & İngiliz Dili Edebiyatı)";
+      else if (net >= 50) netStatus.textContent = "📈 Gelişim Aşaması: Gramer & Paragraf analizleri ile +15 net artışı hedeflenmelidir.";
+      else netStatus.textContent = "🧱 Temel Seviye: A2-B1 kelime ve bağlaç temeli güçlendirilmelidir.";
+    }
+
+    dogruInput.addEventListener('input', calcNet);
+    yanlisInput.addEventListener('input', calcNet);
+
+    // Flashcards
+    const vocab = [
+      { word: "Deteriorate", type: "Verb / Eylem", meaning: "Kötüleşmek, bozulmak, gerilemek", sample: "The patient's condition began to deteriorate rapidly." },
+      { word: "Inevitably", type: "Adverb / Zarf", meaning: "Kaçınılmaz olarak, ister istemez", sample: "Technological advancement will inevitably change the job market." },
+      { word: "Plausible", type: "Adjective / Sıfat", meaning: "Makul, akla yatkın, inandırıcı", sample: "The scientist offered a plausible explanation for the unexpected results." },
+      { word: "Cope with", type: "Phrasal Verb", meaning: "Başa çıkmak, üstesinden gelmek (Handle / Tackle)", sample: "Many countries are struggling to cope with rising energy costs." },
+      { word: "Pioneer", type: "Verb & Noun", meaning: "Öncülük etmek, öncü kişi", sample: "She pioneered research into renewable energy sources." }
+    ];
+
+    let vIdx = 0;
+    const vWord = document.getElementById('vWord');
+    const vType = document.getElementById('vType');
+    const vMeaning = document.getElementById('vMeaning');
+    const vSample = document.getElementById('vSample');
+    const revealBtn = document.getElementById('revealBtn');
+    const nextWordBtn = document.getElementById('nextWordBtn');
+
+    revealBtn.addEventListener('click', () => {
+      vMeaning.classList.toggle('show');
+      vSample.classList.toggle('show');
+      revealBtn.textContent = vMeaning.classList.contains('show') ? "Anlamı Gizle" : "Anlamı Göster";
+    });
+
+    nextWordBtn.addEventListener('click', () => {
+      vIdx = (vIdx + 1) % vocab.length;
+      vWord.textContent = vocab[vIdx].word;
+      vType.textContent = vocab[vIdx].type;
+      vMeaning.textContent = vocab[vIdx].meaning;
+      vSample.textContent = `"${vocab[vIdx].sample}"`;
+      vMeaning.classList.remove('show');
+      vSample.classList.remove('show');
+      revealBtn.textContent = "Anlamı Göster";
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

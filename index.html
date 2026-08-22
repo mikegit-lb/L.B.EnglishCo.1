@@ -1,0 +1,2281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1b34">
+  <meta name="description" content="Private online English coaching, exam preparation, speaking sessions, resources, and study-plan consultancy from L.B. English Co.">
+  <meta property="og:title" content="L.B. English Co. | Private English & Exam Coaching">
+  <meta property="og:description" content="Focused online coaching for IELTS, SAT, TOEFL, YDT, YDS, YÖKDİL, Business English, and every CEFR level.">
+  <meta property="og:type" content="website">
+  <title>L.B. English Co. | Private English & Exam Coaching</title>
+  <link rel="icon" href="assets/lb-english-co-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0d1b34;
+      --ink-2: #182a49;
+      --blue: #315bea;
+      --blue-dark: #2446bc;
+      --sky: #91e5ff;
+      --sky-soft: #e8f8ff;
+      --lime: #c9f36b;
+      --paper: #ffffff;
+      --mist: #f4f7fb;
+      --line: #dce4ef;
+      --muted: #5e6c81;
+      --warm: #ffefd5;
+      --coral: #ff8f72;
+      --success: #197451;
+      --shadow-sm: 0 12px 30px rgba(13, 27, 52, .08);
+      --shadow-lg: 0 28px 80px rgba(13, 27, 52, .16);
+      --radius-sm: 12px;
+      --radius: 22px;
+      --radius-lg: 34px;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.modal-open { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { color: inherit; }
+    :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+    ::selection { background: var(--lime); color: var(--ink); }
+
+    .skip-link {
+      position: fixed;
+      z-index: 200;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-160%);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--ink);
+      transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--blue-dark);
+    }
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 5px rgba(49, 91, 234, .12);
+      content: "";
+    }
+    .section { padding: 112px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+    .section-head h2, .split-copy h2, .resource-intro h2, .cta-panel h2 {
+      margin: 0;
+      max-width: 780px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2.25rem, 4.2vw, 4.3rem);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+    .section-head p { max-width: 480px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1.1;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark { color: #fff; background: var(--ink); box-shadow: 0 12px 28px rgba(13, 27, 52, .18); }
+    .btn-dark:hover { background: var(--blue); box-shadow: 0 14px 32px rgba(49, 91, 234, .25); }
+    .btn-blue { color: #fff; background: var(--blue); box-shadow: 0 12px 28px rgba(49, 91, 234, .22); }
+    .btn-blue:hover { background: var(--blue-dark); }
+    .btn-light { border-color: var(--line); background: #fff; }
+    .btn-light:hover { border-color: var(--ink); }
+    .btn-sky { background: var(--sky); }
+    .btn-sky:hover { background: var(--lime); }
+    .btn-text { min-height: auto; padding: 8px 0; border-radius: 0; color: var(--blue-dark); background: transparent; }
+    .btn svg { width: 18px; height: 18px; }
+
+    header {
+      position: fixed;
+      z-index: 100;
+      inset: 0 0 auto;
+      border-bottom: 1px solid transparent;
+      transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    header.scrolled {
+      border-color: rgba(220, 228, 239, .8);
+      background: rgba(255, 255, 255, .9);
+      box-shadow: 0 8px 30px rgba(13, 27, 52, .06);
+      backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; flex: 0 0 auto; }
+    .brand-mark {
+      width: 54px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .brand-mark-mini { width: 37px; height: 25px; }
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      font-family: "Manrope", sans-serif;
+      font-size: .98rem;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+    .brand-name small {
+      margin-top: 4px;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .48rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+    .nav-item { position: relative; }
+    .nav-item > a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 29px 10px 27px;
+      font-size: .91rem;
+      font-weight: 600;
+    }
+    .nav-item > a::after {
+      position: absolute;
+      right: 100%;
+      bottom: 18px;
+      left: 0;
+      height: 2px;
+      background: var(--blue);
+      content: "";
+      transition: right .2s ease;
+    }
+    .nav-item > a:hover::after, .nav-item:focus-within > a::after { right: 10px; left: 10px; }
+    .nav-chevron { width: 13px; height: 13px; transition: transform .2s ease; }
+    .nav-item:hover .nav-chevron, .nav-item:focus-within .nav-chevron { transform: rotate(180deg); }
+    .nav-popover {
+      position: absolute;
+      top: calc(100% - 5px);
+      left: 50%;
+      width: 520px;
+      padding: 22px;
+      transform: translate(-50%, 10px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .98);
+      box-shadow: 0 24px 64px rgba(13, 27, 52, .17);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+      backdrop-filter: blur(18px);
+    }
+    .nav-popover::before { position: absolute; right: 0; bottom: 100%; left: 0; height: 16px; content: ""; }
+    .nav-item:hover .nav-popover, .nav-item:focus-within .nav-popover { transform: translate(-50%, 0); opacity: 1; visibility: visible; pointer-events: auto; }
+    .nav-item:first-child .nav-popover { left: 0; transform: translate(0, 10px); }
+    .nav-item:first-child:hover .nav-popover, .nav-item:first-child:focus-within .nav-popover { transform: translate(0, 0); }
+    .nav-item:last-child .nav-popover { right: 0; left: auto; transform: translate(0, 10px); }
+    .nav-item:last-child:hover .nav-popover, .nav-item:last-child:focus-within .nav-popover { transform: translate(0, 0); }
+    .nav-popover-wide { width: 650px; }
+    .nav-popover-compact { width: 420px; }
+    .nav-popover-top { display: flex; justify-content: space-between; gap: 20px; align-items: start; margin-bottom: 16px; }
+    .nav-popover-top strong { font: 800 1.02rem "Manrope", sans-serif; }
+    .nav-popover-top span { max-width: 260px; color: var(--muted); font-size: .7rem; line-height: 1.45; }
+    .nav-popover-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .nav-popover-wide .nav-popover-grid { grid-template-columns: repeat(3, 1fr); }
+    .nav-popover a.nav-card { display: block; min-height: 78px; border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--mist); transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+    .nav-popover a.nav-card:hover { transform: translateY(-2px); border-color: var(--sky); background: var(--sky-soft); }
+    .nav-card strong { display: block; margin-bottom: 3px; font-size: .76rem; }
+    .nav-card span { display: block; color: var(--muted); font-size: .64rem; line-height: 1.4; }
+    .nav-card .mono { margin-bottom: 5px; color: var(--blue-dark); font-size: .52rem; }
+    .nav-popover-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--line); }
+    .nav-popover-foot span { color: var(--muted); font-size: .64rem; }
+    .nav-popover-foot a, .nav-popover-foot .btn { min-height: auto; padding: 0; color: var(--blue-dark); font-size: .7rem; font-weight: 800; }
+    .nav-actions { display: flex; gap: 10px; }
+    .nav-actions .btn { min-height: 44px; padding: 11px 15px; font-size: .88rem; }
+    .menu-button {
+      width: 44px;
+      height: 44px;
+      display: none;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .menu-button span, .menu-button::before, .menu-button::after {
+      width: 20px;
+      height: 2px;
+      display: block;
+      background: var(--ink);
+      content: "";
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .menu-button::before { transform: translateY(-5px); }
+    .menu-button::after { transform: translateY(5px); }
+    .menu-button[aria-expanded="true"] span { opacity: 0; }
+    .menu-button[aria-expanded="true"]::before { transform: translateY(2px) rotate(45deg); }
+    .menu-button[aria-expanded="true"]::after { transform: translateY(-2px) rotate(-45deg); }
+
+    .hero {
+      position: relative;
+      min-height: 810px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 140px 0 78px;
+      background:
+        radial-gradient(circle at 83% 18%, rgba(145, 229, 255, .43), transparent 31%),
+        linear-gradient(110deg, #f9fbff 0%, #f1f5ff 52%, #f7fbff 100%);
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      opacity: .32;
+      background-image: radial-gradient(rgba(13, 27, 52, .18) .7px, transparent .7px);
+      background-size: 22px 22px;
+      mask-image: linear-gradient(90deg, #000, transparent 60%);
+      content: "";
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: .94fr 1.06fr;
+      align-items: center;
+      gap: 56px;
+    }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(49, 91, 234, .15);
+      border-radius: 999px;
+      padding: 8px 13px 8px 9px;
+      color: var(--ink-2);
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 8px 20px rgba(49, 91, 234, .07);
+      backdrop-filter: blur(10px);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+    .pulse {
+      width: 18px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(49, 91, 234, .12);
+    }
+    .pulse::after {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      content: "";
+      animation: pulse 2.2s infinite;
+    }
+    @keyframes pulse { 50% { box-shadow: 0 0 0 6px rgba(49, 91, 234, 0); } }
+    .hero h1 {
+      margin: 0;
+      max-width: 670px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(3.25rem, 6vw, 6.1rem);
+      font-weight: 800;
+      line-height: .96;
+      letter-spacing: -.072em;
+    }
+    .marker-word {
+      position: relative;
+      z-index: 0;
+      white-space: nowrap;
+    }
+    .marker-word::after {
+      position: absolute;
+      z-index: -1;
+      right: -.05em;
+      bottom: .04em;
+      left: -.03em;
+      height: .25em;
+      transform: rotate(-1.2deg);
+      border-radius: 2px 10px 4px 8px;
+      background: var(--lime);
+      content: "";
+    }
+    .hero-copy > p {
+      max-width: 610px;
+      margin: 27px 0 0;
+      color: #536177;
+      font-size: clamp(1.03rem, 1.6vw, 1.22rem);
+      line-height: 1.65;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 34px; }
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+    .mini-avatars { display: flex; padding-left: 8px; }
+    .mini-avatar {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      margin-left: -8px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--blue);
+      font-size: .66rem;
+      font-weight: 700;
+    }
+    .mini-avatar:nth-child(2) { background: #f58e72; }
+    .mini-avatar:nth-child(3) { color: var(--ink); background: var(--lime); }
+    .mini-avatar:nth-child(4) { background: #7b64c4; }
+
+    .studio-wrap { position: relative; min-width: 0; perspective: 1200px; }
+    .studio {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      transform: rotate(1.5deg);
+      border: 1px solid rgba(13, 27, 52, .16);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--shadow-lg);
+      transition: transform .45s cubic-bezier(.2, .8, .2, 1);
+    }
+    .studio:hover { transform: rotate(.25deg) translateY(-6px); }
+    .studio-top {
+      min-height: 51px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    .studio-title { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: .8rem; }
+    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #ef5966; box-shadow: 0 0 0 4px rgba(239, 89, 102, .13); }
+    .studio-tabs { display: flex; gap: 4px; }
+    .studio-tab {
+      border: 0;
+      border-radius: 8px;
+      padding: 7px 9px;
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      font-size: .68rem;
+      font-weight: 700;
+    }
+    .studio-tab[aria-selected="true"] { color: var(--ink); background: var(--sky-soft); }
+    .studio-screen { position: relative; min-height: 418px; background: #e7edf4; }
+    .studio-panel { display: none; min-height: 418px; }
+    .studio-panel.active { display: block; animation: panelIn .32s ease; }
+    @keyframes panelIn { from { opacity: 0; transform: translateY(4px); } }
+    .live-panel { position: relative; min-height: 418px; }
+    .live-panel > img { width: 100%; height: 418px; object-fit: cover; object-position: center 41%; }
+    .call-name {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 8px;
+      padding: 7px 10px;
+      color: #fff;
+      background: rgba(13, 27, 52, .72);
+      font-size: .72rem;
+      backdrop-filter: blur(8px);
+    }
+    .student-tile {
+      position: absolute;
+      right: 14px;
+      bottom: 18px;
+      width: 128px;
+      height: 96px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      border: 3px solid #fff;
+      border-radius: 12px;
+      padding: 9px;
+      color: #fff;
+      background:
+        linear-gradient(180deg, transparent, rgba(13, 27, 52, .65)),
+        linear-gradient(135deg, #86a4d4, #283b65);
+      box-shadow: 0 10px 25px rgba(13, 27, 52, .25);
+      font-size: .66rem;
+      font-weight: 700;
+    }
+    .student-tile::before {
+      position: absolute;
+      top: 17px;
+      left: 43px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50% 50% 45% 45%;
+      background: #e7ba93;
+      box-shadow: 0 29px 0 10px #263755;
+      content: "";
+    }
+    .student-tile span { position: relative; z-index: 1; }
+    .call-toolbar {
+      position: absolute;
+      bottom: 17px;
+      left: 50%;
+      display: flex;
+      gap: 8px;
+      transform: translateX(-50%);
+    }
+    .tool-pill {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(13, 27, 52, .84);
+      backdrop-filter: blur(8px);
+    }
+    .tool-pill svg { width: 15px; height: 15px; }
+    .tool-pill.end { background: #ef5966; }
+    .plan-panel, .feedback-panel { padding: 25px; background: #f7f9fd; }
+    .plan-panel h3, .feedback-panel h3 { margin: 0 0 4px; font: 800 1.15rem "Manrope", sans-serif; }
+    .panel-sub { margin: 0 0 20px; color: var(--muted); font-size: .78rem; }
+    .week-list { display: grid; gap: 9px; }
+    .week-item {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      padding: 11px;
+      background: #fff;
+    }
+    .week-day {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1;
+      border-radius: 9px;
+      color: var(--blue-dark);
+      background: var(--sky-soft);
+      font: 600 .62rem "IBM Plex Mono", monospace;
+    }
+    .week-copy strong { display: block; font-size: .79rem; }
+    .week-copy span { color: var(--muted); font-size: .66rem; }
+    .status-check { width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--success); font-size: .67rem; }
+    .status-check.next { color: var(--blue); background: rgba(49, 91, 234, .12); }
+    .feedback-score { display: flex; align-items: end; gap: 9px; margin: 16px 0 18px; }
+    .feedback-score strong { font: 800 3.6rem/1 "Manrope", sans-serif; letter-spacing: -.07em; }
+    .feedback-score span { padding-bottom: 8px; color: var(--muted); font-size: .75rem; }
+    .feedback-note {
+      margin-top: 10px;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 10px 10px 0;
+      padding: 13px 14px;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      font-size: .75rem;
+    }
+    .feedback-note.lime { border-color: #98c938; }
+    .feedback-note strong { display: block; margin-bottom: 3px; }
+    .floating-result {
+      position: absolute;
+      z-index: 4;
+      bottom: -30px;
+      left: -25px;
+      width: min(270px, 47%);
+      border: 1px solid rgba(13, 27, 52, .1);
+      border-radius: 15px;
+      padding: 16px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: 0 20px 48px rgba(13, 27, 52, .17);
+      backdrop-filter: blur(10px);
+    }
+    .floating-result .mono { display: block; color: var(--muted); font-size: .58rem; }
+    .floating-result strong { display: block; margin-top: 3px; font: 800 clamp(1.1rem, 2vw, 1.55rem) "Manrope", sans-serif; letter-spacing: -.04em; }
+    .result-row { display: flex; align-items: center; gap: 12px; }
+    .result-icon { width: 41px; height: 41px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 11px; background: var(--lime); }
+    .result-icon svg { width: 20px; }
+    .orbit-label {
+      position: absolute;
+      z-index: 3;
+      top: -25px;
+      right: -18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transform: rotate(5deg);
+      border-radius: 999px;
+      padding: 10px 13px;
+      color: #fff;
+      background: var(--blue);
+      box-shadow: 0 14px 30px rgba(49, 91, 234, .26);
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    .proof-strip { border-block: 1px solid var(--line); background: #fff; }
+    .proof-grid { min-height: 130px; display: grid; grid-template-columns: 1.25fr repeat(3, 1fr); align-items: center; }
+    .proof-intro { padding-right: 28px; font: 700 1.02rem "Manrope", sans-serif; }
+    .proof-item { min-height: 70px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--line); padding-left: 30px; }
+    .proof-item strong { font: 800 1.7rem "Manrope", sans-serif; letter-spacing: -.05em; }
+    .proof-item span { color: var(--muted); font-size: .78rem; }
+
+    #programmes { background: #fff; }
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+    .filter-btn {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 15px;
+      background: #fff;
+      cursor: pointer;
+      font-size: .84rem;
+      font-weight: 700;
+    }
+    .filter-btn.active { border-color: var(--ink); color: #fff; background: var(--ink); }
+    .course-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .course-card {
+      position: relative;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: #fff;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .course-card:hover { transform: translateY(-6px); border-color: rgba(49, 91, 234, .3); box-shadow: var(--shadow-sm); }
+    .course-card.hidden { display: none; }
+    .course-card.featured { color: #fff; background: var(--ink); }
+    .course-card:nth-child(4n + 2) { background: var(--sky-soft); }
+    .course-card:nth-child(4n + 3) { background: #f8faed; }
+    .course-tag { display: inline-flex; align-self: flex-start; border: 1px solid currentColor; border-radius: 999px; padding: 5px 9px; opacity: .75; font: 600 .6rem "IBM Plex Mono", monospace; text-transform: uppercase; }
+    .course-code {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      color: rgba(13, 27, 52, .09);
+      font: 800 3.6rem "Manrope", sans-serif;
+      letter-spacing: -.08em;
+    }
+    .course-card.featured .course-code { color: rgba(255,255,255,.09); }
+    .course-card h3 { margin: auto 0 9px; font: 800 1.6rem/1.05 "Manrope", sans-serif; letter-spacing: -.04em; }
+    .course-card p { min-height: 63px; margin: 0 0 18px; color: var(--muted); font-size: .86rem; }
+    .course-card.featured p { color: #afbdd1; }
+    .course-meta { display: flex; gap: 12px; padding-top: 15px; border-top: 1px solid rgba(94, 108, 129, .22); font-size: .72rem; font-weight: 700; }
+    .course-meta span { display: flex; align-items: center; gap: 5px; }
+    .course-meta i { width: 6px; height: 6px; display: inline-block; border-radius: 50%; background: var(--blue); }
+    .course-card.featured .course-meta i { background: var(--lime); }
+
+    .formats { position: relative; overflow: hidden; color: #fff; background: var(--ink); }
+    .formats::before {
+      position: absolute;
+      top: -200px;
+      right: -150px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(145, 229, 255, .19);
+      border-radius: 50%;
+      box-shadow: 0 0 0 80px rgba(145, 229, 255, .025), 0 0 0 160px rgba(145, 229, 255, .02);
+      content: "";
+    }
+    .formats-grid { position: relative; display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; align-items: center; }
+    .formats .eyebrow { color: var(--sky); }
+    .formats .eyebrow::before { background: var(--sky); box-shadow: 0 0 0 5px rgba(145, 229, 255, .12); }
+    .split-copy > p { margin: 24px 0 30px; color: #aebbd0; }
+    .format-switcher { display: grid; gap: 12px; }
+    .format-button {
+      position: relative;
+      display: grid;
+      grid-template-columns: 66px 1fr auto;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 18px;
+      padding: 20px;
+      color: #fff;
+      background: rgba(255,255,255,.04);
+      cursor: pointer;
+      text-align: left;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .format-button:hover, .format-button.active { transform: translateX(5px); border-color: var(--sky); background: rgba(145, 229, 255, .1); }
+    .format-num { display: grid; place-items: center; aspect-ratio: 1; border-radius: 15px; color: var(--ink); background: var(--lime); font: 800 1.25rem "Manrope", sans-serif; }
+    .format-button:nth-child(2) .format-num { background: var(--sky); }
+    .format-button:nth-child(3) .format-num { background: var(--warm); }
+    .format-button strong { display: block; margin-bottom: 3px; font: 800 1.05rem "Manrope", sans-serif; }
+    .format-button span { color: #aebbd0; font-size: .76rem; }
+    .format-button svg { width: 21px; transition: transform .2s ease; }
+    .format-button:hover svg { transform: translateX(3px); }
+    .format-detail {
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      background: #f8fbff;
+      color: var(--ink);
+      box-shadow: 0 34px 80px rgba(0, 0, 0, .2);
+    }
+    .format-detail-top { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+    .format-detail h3 { margin: 10px 0 0; font: 800 clamp(2rem, 4vw, 3.4rem)/1 "Manrope", sans-serif; letter-spacing: -.055em; }
+    .format-badge { border-radius: 999px; padding: 8px 12px; background: var(--lime); font: 600 .6rem "IBM Plex Mono", monospace; text-transform: uppercase; }
+    .format-detail > p { max-width: 520px; color: var(--muted); }
+    .format-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 30px; padding: 0; list-style: none; }
+    .format-list li { display: flex; gap: 10px; align-items: flex-start; font-size: .84rem; font-weight: 600; }
+    .format-list li::before { width: 20px; height: 20px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 50%; color: var(--blue-dark); background: var(--sky-soft); content: "✓"; font-size: .66rem; font-weight: 800; }
+    .format-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); }
+    .format-note { color: var(--muted); font-size: .74rem; }
+
+    .speaking { background: #f7f9fc; }
+    .session-board {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .session-intro { padding: 42px; color: #fff; background: var(--blue); }
+    .session-intro .mono { color: var(--lime); }
+    .session-intro h3 { margin: 18px 0; font: 800 2.3rem/1.04 "Manrope", sans-serif; letter-spacing: -.05em; }
+    .session-intro p { color: #dce4ff; }
+    .session-features { display: grid; gap: 12px; margin-top: 30px; }
+    .session-feature { display: flex; align-items: center; gap: 11px; font-size: .82rem; font-weight: 700; }
+    .session-feature i { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 7px; color: var(--ink); background: var(--lime); font-style: normal; }
+    .session-list { display: grid; gap: 0; padding: 20px 30px; }
+    .session-row {
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      align-items: center;
+      gap: 18px;
+      padding: 21px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .session-row:last-child { border-bottom: 0; }
+    .session-date { color: var(--blue-dark); font: 600 .68rem/1.5 "IBM Plex Mono", monospace; text-transform: uppercase; }
+    .session-row h4 { margin: 0 0 3px; font: 800 1rem "Manrope", sans-serif; }
+    .session-row p { margin: 0; color: var(--muted); font-size: .76rem; }
+    .session-row .btn { min-height: 42px; padding: 10px 14px; font-size: .75rem; }
+
+    .resources { overflow: hidden; background: #fff; }
+    .resource-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 70px; align-items: start; }
+    .resource-intro { position: sticky; top: 120px; }
+    .resource-intro > p { margin: 24px 0; color: var(--muted); }
+    .resource-intro .resource-promise {
+      margin: 24px 0;
+      border-left: 3px solid var(--lime);
+      padding: 2px 0 2px 16px;
+      color: var(--ink);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+    .resource-tabs { display: inline-flex; gap: 5px; margin-top: 8px; border-radius: 13px; padding: 5px; background: var(--mist); }
+    .resource-tab { border: 0; border-radius: 9px; padding: 10px 14px; background: transparent; cursor: pointer; font-size: .78rem; font-weight: 700; }
+    .resource-tab.active { color: #fff; background: var(--ink); box-shadow: 0 6px 16px rgba(13, 27, 52, .16); }
+    .resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .resource-card {
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 23px;
+      background: #fff;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .resource-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+    .resource-card.premium { display: none; }
+    .resource-grid.show-premium .resource-card.free { display: none; }
+    .resource-grid.show-premium .resource-card.premium { display: flex; }
+    .resource-cover {
+      position: relative;
+      height: 128px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border-radius: 13px;
+      padding: 14px;
+      background: var(--sky-soft);
+    }
+    .resource-card:nth-child(2n) .resource-cover { background: #eff7d8; }
+    .resource-card.premium .resource-cover { background: #eeeaff; }
+    .resource-cover::after {
+      position: absolute;
+      top: -22px;
+      right: -10px;
+      width: 105px;
+      height: 105px;
+      border: 24px solid rgba(49, 91, 234, .13);
+      border-radius: 50%;
+      content: "";
+    }
+    .resource-cover strong { position: relative; z-index: 1; max-width: 190px; font: 800 1.28rem/1.05 "Manrope", sans-serif; letter-spacing: -.04em; }
+    .resource-type { display: flex; justify-content: space-between; margin: 18px 0 8px; color: var(--muted); font: 600 .58rem "IBM Plex Mono", monospace; text-transform: uppercase; }
+    .resource-card h3 { margin: 0; font: 800 1.05rem "Manrope", sans-serif; }
+    .resource-card > p { margin: 8px 0 18px; color: var(--muted); font-size: .76rem; }
+    .resource-delivery { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; }
+    .resource-delivery span { border: 1px solid var(--line); border-radius: 999px; padding: 5px 8px; color: var(--blue-dark); background: var(--mist); font: 600 .54rem "IBM Plex Mono", monospace; text-transform: uppercase; }
+    .resource-library-card { border-color: rgba(49, 91, 234, .3); background: linear-gradient(145deg, #fff, var(--sky-soft)); }
+    .resource-library-card .resource-cover { color: #fff; background: var(--blue); }
+    .resource-library-card .resource-cover::after { border-color: rgba(185, 246, 87, .34); }
+    .resource-actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+    .resource-actions .btn { min-height: 41px; padding: 10px 13px; font-size: .73rem; }
+    .save-btn { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 10px; background: #fff; cursor: pointer; }
+    .save-btn svg { width: 17px; }
+    .save-btn.saved { color: #fff; border-color: var(--blue); background: var(--blue); }
+
+    .consultancy { background: var(--warm); }
+    .consultancy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .roadmap {
+      position: relative;
+      min-height: 520px;
+      border: 1px solid rgba(13, 27, 52, .13);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      background: #fff;
+      box-shadow: 18px 18px 0 rgba(13, 27, 52, .08);
+    }
+    .roadmap-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+    .roadmap-top strong { font: 800 1.1rem "Manrope", sans-serif; }
+    .roadmap-top span { border-radius: 999px; padding: 6px 10px; color: var(--success); background: #e8f8f1; font-size: .67rem; font-weight: 700; }
+    .roadmap-steps { position: relative; display: grid; gap: 24px; margin-top: 30px; }
+    .roadmap-steps::before { position: absolute; top: 25px; bottom: 25px; left: 22px; width: 1px; background: var(--line); content: ""; }
+    .roadmap-step { position: relative; display: grid; grid-template-columns: 46px 1fr; gap: 15px; }
+    .roadmap-step i { position: relative; z-index: 1; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 14px; background: #fff; font: 600 .67rem "IBM Plex Mono", monospace; font-style: normal; }
+    .roadmap-step.active i { color: #fff; border-color: var(--blue); background: var(--blue); box-shadow: 0 8px 22px rgba(49, 91, 234, .25); }
+    .roadmap-step h4 { margin: 2px 0 4px; font: 800 .94rem "Manrope", sans-serif; }
+    .roadmap-step p { margin: 0; color: var(--muted); font-size: .74rem; }
+    .consultancy .split-copy > p { color: #5f6470; }
+    .service-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 26px 0 32px; }
+    .service-chip { border: 1px solid rgba(13, 27, 52, .16); border-radius: 999px; padding: 8px 12px; background: rgba(255,255,255,.42); font-size: .76rem; font-weight: 700; }
+
+    .principles { background: #fff; }
+    .principle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .principle {
+      min-height: 310px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      background: #fff;
+    }
+    .principle:nth-child(2) { background: var(--sky-soft); }
+    .principle:nth-child(3) { color: #fff; background: var(--ink); }
+    .principle-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: var(--lime); }
+    .principle-icon svg { width: 23px; }
+    .principle h3 { margin: 72px 0 10px; font: 800 1.45rem "Manrope", sans-serif; letter-spacing: -.035em; }
+    .principle p { margin: 0; color: var(--muted); font-size: .88rem; }
+    .principle:nth-child(3) p { color: #aebbd0; }
+
+    .faq { background: #f7f9fc; }
+    .faq-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 80px; align-items: start; }
+    .faq .split-copy { position: sticky; top: 120px; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border: 0;
+      padding: 25px 0;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      font: 800 1rem "Manrope", sans-serif;
+    }
+    .faq-question span:last-child { width: 28px; height: 28px; display: grid; flex: 0 0 auto; place-items: center; border: 1px solid var(--line); border-radius: 50%; transition: transform .2s ease; }
+    .faq-question[aria-expanded="true"] span:last-child { transform: rotate(45deg); color: #fff; border-color: var(--blue); background: var(--blue); }
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s ease; }
+    .faq-answer > div { overflow: hidden; }
+    .faq-answer p { margin: 0; padding: 0 44px 24px 0; color: var(--muted); font-size: .9rem; }
+    .faq-question[aria-expanded="true"] + .faq-answer { grid-template-rows: 1fr; }
+
+    .final-cta { padding: 34px 0 0; background: #f7f9fc; }
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: end;
+      gap: 50px;
+      border-radius: 36px 36px 0 0;
+      padding: 72px 70px 0;
+      color: #fff;
+      background: var(--blue);
+    }
+    .cta-panel::before { position: absolute; top: -150px; right: -70px; width: 420px; height: 420px; border: 75px solid rgba(255,255,255,.08); border-radius: 50%; content: ""; }
+    .cta-copy { position: relative; padding-bottom: 68px; }
+    .cta-copy p { max-width: 570px; margin: 22px 0 30px; color: #dce4ff; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .cta-actions .btn-light { border-color: rgba(255,255,255,.25); color: #fff; background: rgba(255,255,255,.08); }
+    .cta-actions .btn-light:hover { color: var(--ink); background: #fff; }
+    .cta-visual { position: relative; min-height: 380px; }
+    .score-sheet {
+      position: absolute;
+      right: 25px;
+      bottom: -45px;
+      width: min(380px, 95%);
+      transform: rotate(4deg);
+      border-radius: 20px;
+      padding: 28px;
+      color: var(--ink);
+      background: #fff;
+      box-shadow: 0 30px 65px rgba(13, 27, 52, .26);
+    }
+    .score-sheet h3 { margin: 14px 0 3px; font: 800 1.7rem "Manrope", sans-serif; letter-spacing: -.045em; }
+    .score-sheet p { margin: 0 0 24px; color: var(--muted); font-size: .76rem; }
+    .score-line { display: grid; grid-template-columns: 100px 1fr 36px; gap: 10px; align-items: center; margin: 11px 0; font-size: .67rem; font-weight: 700; }
+    .score-bar { height: 7px; overflow: hidden; border-radius: 999px; background: var(--line); }
+    .score-bar i { display: block; height: 100%; border-radius: 999px; background: var(--blue); }
+    .score-line:nth-child(2n) .score-bar i { background: #83bd21; }
+
+    footer { padding: 68px 0 30px; color: #b2bfd1; background: var(--ink); }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 56px; padding-bottom: 52px; }
+    footer .brand-name { color: #fff; }
+    footer .brand-name small { color: #8e9caf; }
+    .footer-logo {
+      width: 148px;
+      height: 148px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .2);
+    }
+    .footer-about p { max-width: 360px; margin: 22px 0 0; color: #8e9caf; font-size: .85rem; }
+    .footer-col h3 { margin: 0 0 18px; color: #fff; font: 600 .67rem "IBM Plex Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .footer-col a, .footer-col button { display: block; margin: 11px 0; border: 0; padding: 0; color: #8e9caf; background: none; cursor: pointer; font-size: .82rem; text-align: left; }
+    .footer-col a:hover, .footer-col button:hover { color: var(--sky); }
+    .footer-legal {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 34px;
+      margin-bottom: 28px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 28px;
+    }
+    .footer-legal-copy { color: #8e9caf; font-size: .7rem; line-height: 1.65; }
+    .footer-legal-copy strong { display: block; margin-bottom: 5px; color: #cbd5e4; font-size: .72rem; }
+    .footer-legal-copy p { margin: 0 0 10px; }
+    .footer-legal-links { display: flex; align-content: start; justify-content: flex-end; flex-wrap: wrap; gap: 8px 14px; }
+    .footer-legal-links a { color: #9cadc2; font-size: .7rem; text-decoration: underline; text-underline-offset: 3px; }
+    .footer-legal-links a:hover { color: var(--sky); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); color: #7e8b9f; font-size: .72rem; }
+    .status { display: flex; align-items: center; gap: 8px; }
+    .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--sky); box-shadow: 0 0 0 4px rgba(145, 229, 255, .08); }
+
+    .modal {
+      position: fixed;
+      z-index: 300;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(7, 16, 31, .68);
+      backdrop-filter: blur(8px);
+    }
+    .modal.open { display: grid; animation: fadeIn .2s ease; }
+    @keyframes fadeIn { from { opacity: 0; } }
+    .modal-card {
+      position: relative;
+      width: min(650px, 100%);
+      max-height: min(760px, calc(100vh - 44px));
+      overflow: auto;
+      border-radius: 26px;
+      padding: 36px;
+      background: #fff;
+      box-shadow: 0 36px 100px rgba(0,0,0,.3);
+    }
+    .modal-close { position: absolute; top: 18px; right: 18px; width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: #fff; cursor: pointer; font-size: 1.2rem; }
+    .modal-card h2 { margin: 6px 48px 8px 0; font: 800 clamp(2rem, 5vw, 3rem)/1.02 "Manrope", sans-serif; letter-spacing: -.055em; }
+    .modal-lead { margin: 0 0 24px; color: var(--muted); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .76rem; font-weight: 700; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      padding: 13px 14px;
+      color: var(--ink);
+      background: #fff;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--blue); outline: 3px solid rgba(49, 91, 234, .1); }
+    .field textarea { min-height: 92px; resize: vertical; }
+    .form-note { margin: 15px 0; color: var(--muted); font-size: .7rem; }
+    .form-success { display: none; padding: 30px 0 10px; text-align: center; }
+    .form-success.show { display: block; }
+    .success-icon { width: 66px; height: 66px; display: grid; place-items: center; margin: 0 auto 18px; border-radius: 22px; color: var(--success); background: #e8f8f1; font-size: 1.7rem; }
+    .form-success h3 { margin: 0 0 8px; font: 800 1.5rem "Manrope", sans-serif; }
+
+    .wizard-progress { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 24px 0 30px; }
+    .wizard-progress i { height: 5px; border-radius: 999px; background: var(--line); }
+    .wizard-progress i.active { background: var(--blue); }
+    .wizard-step { display: none; }
+    .wizard-step.active { display: block; animation: panelIn .25s ease; }
+    .wizard-step h3 { margin: 0 0 18px; font: 800 1.28rem "Manrope", sans-serif; }
+    .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .choice {
+      min-height: 92px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+    }
+    .choice:hover, .choice.selected { border-color: var(--blue); background: var(--sky-soft); }
+    .choice strong { font-size: .86rem; }
+    .choice span { color: var(--muted); font-size: .68rem; }
+    .wizard-actions { display: flex; justify-content: space-between; margin-top: 24px; }
+    .wizard-result { display: none; border-radius: 18px; padding: 22px; background: var(--sky-soft); }
+    .wizard-result.show { display: block; animation: panelIn .25s ease; }
+    .wizard-result .mono { color: var(--blue-dark); }
+    .wizard-result h3 { margin: 10px 0 6px; font: 800 1.6rem "Manrope", sans-serif; }
+    .wizard-result p { color: var(--muted); }
+
+    .toast {
+      position: fixed;
+      z-index: 400;
+      right: 22px;
+      bottom: 22px;
+      max-width: min(370px, calc(100vw - 44px));
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(140%);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 14px;
+      padding: 15px 17px;
+      color: #fff;
+      background: var(--ink);
+      box-shadow: 0 20px 50px rgba(13,27,52,.25);
+      opacity: 0;
+      transition: transform .3s ease, opacity .3s ease;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast i { width: 22px; height: 22px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 50%; color: var(--ink); background: var(--lime); font-style: normal; }
+
+    /* Floating Quick Connect & WhatsApp */
+    .quick-connect {
+      position: fixed;
+      z-index: 120;
+      right: 24px;
+      bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    .quick-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 700;
+      font-size: .84rem;
+      box-shadow: 0 12px 32px rgba(13, 27, 52, .18);
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+      text-decoration: none;
+    }
+    .quick-pill:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(13, 27, 52, .24); }
+    .quick-pill-wa { background: #25D366; color: #fff; border: 1px solid #1fa851; }
+    .quick-pill-cal { background: var(--ink); color: #fff; border: 1px solid rgba(255,255,255,.15); }
+    .quick-pill svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* Transformations Wall */
+    .transformations-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .transform-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .transform-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+    .transform-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .transform-pill { font-size: .68rem; font-weight: 700; border-radius: 999px; padding: 4px 10px; background: var(--sky-soft); color: var(--blue-dark); }
+    .transform-scores { display: flex; align-items: center; gap: 12px; margin: 12px 0 16px; padding: 14px; background: var(--mist); border-radius: 12px; }
+    .transform-score-box { text-align: center; }
+    .transform-score-box small { font-size: .62rem; color: var(--muted); display: block; text-transform: uppercase; font-family: "IBM Plex Mono", monospace; }
+    .transform-score-box strong { font-size: 1.4rem; font-family: "Manrope", sans-serif; font-weight: 800; }
+    .score-old { color: #8898aa; text-decoration: line-through; }
+    .score-new { color: var(--blue); }
+    .transform-arrow { color: var(--blue); font-size: 1.2rem; font-weight: 800; }
+    .transform-card p { font-size: .82rem; color: var(--muted); line-height: 1.55; margin: 0 0 14px; }
+    .transform-student { display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
+    .student-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .75rem; }
+
+    /* Quiz Modal */
+    .quiz-options { display: grid; gap: 8px; margin: 18px 0; }
+    .quiz-opt {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 16px;
+      text-align: left;
+      background: #fff;
+      cursor: pointer;
+      font-size: .86rem;
+      font-weight: 600;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .quiz-opt:hover, .quiz-opt.selected { border-color: var(--blue); background: var(--sky-soft); }
+    .quiz-result-box {
+      border-radius: 18px;
+      padding: 24px;
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .quiz-result-box strong.level { font-size: 3rem; font-family: "Manrope", sans-serif; font-weight: 800; color: var(--lime); line-height: 1; display: block; margin: 6px 0; }
+    .quiz-breakdown-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; text-align: left; }
+    .breakdown-col { background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px; font-size: .75rem; }
+    .breakdown-col span { display: block; color: var(--sky); font-family: "IBM Plex Mono", monospace; font-size: .65rem; }
+    .breakdown-col strong { font-size: 1rem; color: #fff; }
+
+    /* Study Planner */
+    .schedule-output { display: grid; gap: 10px; margin: 18px 0; }
+    .schedule-day-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: var(--mist);
+    }
+    .schedule-day-label { font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: .75rem; color: var(--blue-dark); }
+    .schedule-day-tasks strong { display: block; font-size: .84rem; }
+    .schedule-day-tasks span { font-size: .72rem; color: var(--muted); }
+
+    .mobile-cta { position: fixed; z-index: 90; right: 12px; bottom: 12px; left: 12px; display: none; }
+    .mobile-cta .btn { width: 100%; box-shadow: 0 14px 35px rgba(13,27,52,.3); }
+
+    @media (max-width: 1050px) {
+      .transformations-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { position: fixed; inset: 82px 20px auto; display: none; max-height: calc(100vh - 102px); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 0; border: 1px solid var(--line); border-radius: 18px; padding: 12px; background: #fff; box-shadow: var(--shadow-lg); }
+      .nav-links.open { display: flex; }
+      .nav-item > a { justify-content: space-between; padding: 13px 12px; }
+      .nav-item > a::after, .nav-popover { display: none; }
+      .nav-actions .btn-light { display: none; }
+      .menu-button { display: grid; }
+      .hero { min-height: auto; padding-top: 140px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 75px; }
+      .hero-copy { max-width: 730px; }
+      .studio-wrap { width: min(800px, 94%); margin-inline: auto; }
+      .proof-grid { grid-template-columns: repeat(3, 1fr); padding: 22px 0; }
+      .proof-intro { grid-column: 1 / -1; padding: 0 0 18px; }
+      .proof-item:first-of-type { border-left: 0; padding-left: 0; }
+      .course-grid { grid-template-columns: repeat(2, 1fr); }
+      .formats-grid, .consultancy-grid { gap: 48px; }
+      .session-board, .resource-layout, .faq-grid { grid-template-columns: 1fr; }
+      .resource-intro, .faq .split-copy { position: static; }
+      .resource-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-panel { padding-inline: 44px; }
+      .footer-grid { grid-template-columns: 1.5fr repeat(2, 1fr); }
+      .footer-col:last-child { grid-column: 2; }
+      .footer-legal { grid-template-columns: 1fr; }
+      .footer-legal-links { justify-content: flex-start; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .section { padding: 82px 0; }
+      .section-head { display: block; margin-bottom: 34px; }
+      .section-head p { margin-top: 18px; }
+      .nav { min-height: 72px; }
+      .nav-links { inset: 72px 14px auto; }
+      .nav-actions .btn-sky { display: none; }
+      .brand-mark { width: 48px; height: 32px; }
+      .hero { padding: 118px 0 64px; }
+      .hero h1 { font-size: clamp(3rem, 15vw, 4.8rem); }
+      .marker-word { white-space: normal; }
+      .hero-copy > p { font-size: 1rem; }
+      .hero-actions { display: grid; }
+      .hero-actions .btn { width: 100%; }
+      .studio-wrap { width: 100%; }
+      .studio { transform: rotate(.5deg); }
+      .studio-screen, .studio-panel, .live-panel { min-height: 328px; }
+      .live-panel > img { height: 328px; }
+      .studio-tabs .studio-tab { padding: 6px; font-size: .59rem; }
+      .student-tile { width: 101px; height: 76px; }
+      .student-tile::before { top: 12px; left: 35px; width: 31px; height: 31px; box-shadow: 0 23px 0 8px #263755; }
+      .floating-result { bottom: -42px; left: 8px; width: 66%; padding: 12px; }
+      .orbit-label { top: -22px; right: 4px; }
+      .plan-panel, .feedback-panel { padding: 18px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-item, .proof-item:first-of-type { min-height: 62px; border-top: 1px solid var(--line); border-left: 0; padding: 14px 0 0; }
+      .course-grid { grid-template-columns: 1fr; }
+      .course-card { min-height: 285px; }
+      .formats-grid, .consultancy-grid { grid-template-columns: 1fr; }
+      .format-detail { min-height: 420px; padding: 25px; }
+      .format-list { grid-template-columns: 1fr; }
+      .format-button { grid-template-columns: 56px 1fr auto; padding: 15px; }
+      .session-intro { padding: 30px 24px; }
+      .session-list { padding: 12px 18px; }
+      .session-row { grid-template-columns: 72px 1fr; gap: 10px; padding: 18px 0; }
+      .session-row .btn { grid-column: 2; justify-self: start; }
+      .resource-layout { gap: 36px; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .roadmap { min-height: 490px; padding: 25px; box-shadow: 10px 10px 0 rgba(13, 27, 52, .07); }
+      .principle-grid { grid-template-columns: 1fr; }
+      .principle { min-height: 270px; }
+      .principle h3 { margin-top: 54px; }
+      .faq-grid { gap: 36px; }
+      .cta-panel { grid-template-columns: 1fr; padding: 48px 24px 0; }
+      .cta-copy { padding-bottom: 0; }
+      .cta-visual { min-height: 350px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 38px 24px; }
+      .footer-about { grid-column: 1 / -1; }
+      .footer-col:last-child { grid-column: auto; }
+      .footer-bottom { flex-direction: column; }
+      .modal-card { padding: 28px 20px; }
+      .form-grid, .choice-grid { grid-template-columns: 1fr; }
+      .mobile-cta { display: block; }
+      footer { padding-bottom: 100px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="L.B. English Co. home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/lb-english-co-mark.svg" alt="" width="166" height="98"></span>
+        <span class="brand-name">L.B. English Co.<small>Private learning studio</small></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <div class="nav-item">
+          <a href="#programmes" aria-haspopup="true">Exam Hubs <svg class="nav-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+          <div class="nav-popover nav-popover-wide">
+            <div class="nav-popover-top"><strong>Dedicated Exam &amp; Prep Hubs</strong><span>Specialized curriculum, score tools, and focused strategy.</span></div>
+            <div class="nav-popover-grid">
+              <a class="nav-card" href="ielts.html"><span class="mono">Dedicated Hub ↗</span><strong>IELTS Mastery Hub</strong><span>Band calculator, speaking cue-card drills &amp; writing rubrics.</span></a>
+              <a class="nav-card" href="ydt-yds.html"><span class="mono">Dedicated Hub ↗</span><strong>YDT · YDS · YÖKDİL</strong><span>ÖSYM net calculator, academic vocab drill &amp; question tactics.</span></a>
+              <a class="nav-card" href="speaking.html"><span class="mono">Dedicated Hub ↗</span><strong>Speaking Studio</strong><span>Weekly live debate topics, accent feedback &amp; 20% buddy rate.</span></a>
+            </div>
+            <div class="nav-popover-foot"><span>Need a fast assessment?</span><button class="btn btn-text" type="button" data-open-quiz>Take 5-Min Diagnostic Quiz →</button></div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#formats" aria-haspopup="true">VIP Formats <svg class="nav-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+          <div class="nav-popover">
+            <div class="nav-popover-top"><strong>Small by design</strong><span>Choose privacy, shared momentum or expert direction.</span></div>
+            <div class="nav-popover-grid">
+              <a class="nav-card" href="#formats"><strong>Private 1:1 Coaching</strong><span>Your level, timetable, feedback and roadmap.</span></a>
+              <a class="nav-card" href="#formats"><strong>VIP groups of 3–5</strong><span>Matched goals with genuine live participation.</span></a>
+              <a class="nav-card" href="#transformations"><strong>Success Stories</strong><span>Real before &amp; after score transformations.</span></a>
+              <a class="nav-card" href="speaking.html"><strong>Speaking Rooms</strong><span>Low-pressure, level-matched live practice.</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="resources.html" aria-haspopup="true">Tools &amp; Resources <svg class="nav-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+          <div class="nav-popover">
+            <div class="nav-popover-top"><strong>Learning Libraries &amp; Tools</strong><span>Open access tools for independent study.</span></div>
+            <div class="nav-popover-grid">
+              <a class="nav-card" href="resources.html"><span class="mono">Open shelf ↗</span><strong>Free Resource Library</strong><span>PDF worksheets, checklists, templates &amp; score tables.</span></a>
+              <a class="nav-card" href="#" data-open-planner><span class="mono">Interactive Tool</span><strong>Study Plan Generator</strong><span>Custom day-by-day weekly study roadmap.</span></a>
+            </div>
+            <div class="nav-popover-foot"><span>Instant equivalencies</span><a href="resources.html#interactive-tools">See Exam Score Matrix →</a></div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#consultancy" aria-haspopup="true">Consultancy <svg class="nav-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+          <div class="nav-popover nav-popover-compact">
+            <div class="nav-popover-top"><strong>Get the map first</strong><span>Expert direction before more practice.</span></div>
+            <div class="nav-popover-grid">
+              <a class="nav-card" href="#consultancy"><strong>Exam Selection</strong><span>Choose the right exam, target and timeline.</span></a>
+              <a class="nav-card" href="#consultancy"><strong>Plan &amp; Mock Audit</strong><span>Find the real gap and sequence the work.</span></a>
+            </div>
+            <div class="nav-popover-foot"><span>Standalone or before coaching</span><button class="btn btn-text" type="button" data-open-consultation>Book a free call →</button></div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-light" type="button" data-open-quiz>5-Min Quiz</button>
+        <button class="btn btn-sky" type="button" data-open-consultation>Book a free call</button>
+        <button class="menu-button" type="button" id="menuButton" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge"><span class="pulse"></span>Now enrolling: 1:1 &amp; VIP groups of 3–5</div>
+          <h1>Master the exam. <span class="marker-word">Keep the English.</span></h1>
+          <p>Private online coaching for IELTS, SAT, TOEFL and Türkiye’s national language exams—plus Business English, speaking practice and every CEFR level. One focused plan, built around you.</p>
+          <div class="hero-actions">
+            <button class="btn btn-dark" type="button" data-open-consultation>
+              Book a free consultation
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="btn btn-sky" type="button" data-open-quiz>🎯 5-Min Score Predictor Quiz</button>
+            <button class="btn btn-light" type="button" data-open-planner>📅 Study Schedule Generator</button>
+          </div>
+          <div class="hero-note">
+            <div class="mini-avatars" aria-hidden="true"><span class="mini-avatar">A2</span><span class="mini-avatar">B1</span><span class="mini-avatar">C1</span><span class="mini-avatar">VIP</span></div>
+            <span><a href="ielts.html" style="text-decoration: underline; font-weight: 700;">IELTS Hub ↗</a> · <a href="ydt-yds.html" style="text-decoration: underline; font-weight: 700;">YDT &amp; YDS Hub ↗</a> · <a href="speaking.html" style="text-decoration: underline; font-weight: 700;">Speaking Studio ↗</a></span>
+          </div>
+        </div>
+
+        <div class="studio-wrap" aria-label="Interactive preview of the L.B. online learning studio">
+          <div class="orbit-label"><span class="live-dot"></span>Private studio, live</div>
+          <div class="studio">
+            <div class="studio-top">
+              <div class="studio-title"><span class="brand-mark brand-mark-mini"><img src="assets/lb-english-co-mark.svg" alt="" width="166" height="98"></span> Learning Studio</div>
+              <div class="studio-tabs" role="tablist" aria-label="Learning studio previews">
+                <button class="studio-tab" type="button" role="tab" aria-selected="true" data-studio="live">Live class</button>
+                <button class="studio-tab" type="button" role="tab" aria-selected="false" data-studio="plan">My plan</button>
+                <button class="studio-tab" type="button" role="tab" aria-selected="false" data-studio="feedback">Feedback</button>
+              </div>
+            </div>
+            <div class="studio-screen">
+              <div class="studio-panel live-panel active" id="studio-live" role="tabpanel">
+                <img src="assets/hero-coaching.jpg" alt="English tutor leading a focused private online coaching session" width="1536" height="1024">
+                <span class="call-name"><span class="live-dot"></span>Live coaching · Leyla B.</span>
+                <div class="student-tile" aria-hidden="true"><span>Deniz · IELTS</span></div>
+                <div class="call-toolbar" aria-hidden="true">
+                  <span class="tool-pill"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Zm-7 9a7 7 0 0 0 14 0M12 19v3m-4 0h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                  <span class="tool-pill"><svg viewBox="0 0 24 24"><path d="M4 7h11v10H4zM15 10l5-3v10l-5-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+                  <span class="tool-pill"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H8l-4 3V5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+                  <span class="tool-pill end"><svg viewBox="0 0 24 24"><path d="M5 15c4-4 10-4 14 0M8 13l-3 2-1-4m12 2 3 2 1-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </div>
+              </div>
+              <div class="studio-panel plan-panel" id="studio-plan" role="tabpanel">
+                <h3>Your week, already focused.</h3>
+                <p class="panel-sub">IELTS · Band 6.0 → 7.0 roadmap · Week 03</p>
+                <div class="week-list">
+                  <div class="week-item"><span class="week-day">MON</span><span class="week-copy"><strong>Reading: inference under pressure</strong><span>18-minute guided drill</span></span><span class="status-check">✓</span></div>
+                  <div class="week-item"><span class="week-day">WED</span><span class="week-copy"><strong>Private coaching session</strong><span>Writing Task 2 feedback</span></span><span class="status-check">✓</span></div>
+                  <div class="week-item"><span class="week-day">FRI</span><span class="week-copy"><strong>Speaking Studio</strong><span>Part 3: ideas to evidence</span></span><span class="status-check next">→</span></div>
+                  <div class="week-item"><span class="week-day">SUN</span><span class="week-copy"><strong>Progress review</strong><span>Update next week’s priorities</span></span><span class="status-check next">→</span></div>
+                </div>
+              </div>
+              <div class="studio-panel feedback-panel" id="studio-feedback" role="tabpanel">
+                <h3>Feedback you can use.</h3>
+                <p class="panel-sub">Not just a score—your next clear move.</p>
+                <div class="feedback-score"><strong>7.0</strong><span>current writing estimate<br>illustrative dashboard</span></div>
+                <div class="feedback-note"><strong>Make the claim narrower.</strong>Your evidence is relevant; link it directly to the question before adding the example.</div>
+                <div class="feedback-note lime"><strong>This improved.</strong>Your topic sentences now guide the reader clearly. Keep this structure in timed practice.</div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-result">
+            <div class="result-row">
+              <span class="result-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16 5-5 4 4 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span><span class="mono">The real advantage</span><strong>Know what to do next.</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-strip" aria-label="Programme overview">
+      <div class="container proof-grid">
+        <div class="proof-intro">A small studio with a deliberately wide teaching range.</div>
+        <div class="proof-item"><strong>8 tracks</strong><span>exam, career &amp; general English</span></div>
+        <div class="proof-item"><strong>1:1 / 3–5</strong><span>private or genuinely small VIP groups</span></div>
+        <div class="proof-item"><strong>1 roadmap</strong><span>built around your goal and timeline</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="programmes">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow mono">Choose your destination</p><h2>Every route. One clear standard.</h2></div>
+          <p>Filter the studio by your goal. Every programme can be delivered privately or in a carefully matched VIP group.</p>
+        </div>
+        <div class="filter-bar" aria-label="Filter programmes">
+          <button class="filter-btn active" type="button" data-filter="all">All programmes</button>
+          <button class="filter-btn" type="button" data-filter="international">International exams</button>
+          <button class="filter-btn" type="button" data-filter="national">Türkiye exams</button>
+          <button class="filter-btn" type="button" data-filter="english">English for life &amp; work</button>
+        </div>
+        <div class="course-grid" id="courseGrid">
+          <article class="course-card featured" data-category="international"><span class="course-tag">International exam</span><span class="course-code">IEL</span><h3>IELTS Mastery</h3><p>Four-skill strategy, band-focused feedback and timed practice for Academic or General Training.</p><div class="course-meta"><span><i></i>All skills</span><span><i></i>Diagnostic start</span></div></article>
+          <article class="course-card" data-category="international"><span class="course-tag">University admissions</span><span class="course-code">SAT</span><h3>SAT English</h3><p>Digital SAT Reading &amp; Writing built around accuracy, pacing and repeatable question logic.</p><div class="course-meta"><span><i></i>Adaptive plan</span><span><i></i>Timed sets</span></div></article>
+          <article class="course-card" data-category="international"><span class="course-tag">International exam</span><span class="course-code">TFL</span><h3>TOEFL iBT</h3><p>Integrated-skill coaching for clear notes, structured responses and confident test-day control.</p><div class="course-meta"><span><i></i>4 sections</span><span><i></i>Speaking lab</span></div></article>
+          <article class="course-card" data-category="national"><span class="course-tag">Türkiye exams</span><span class="course-code">YDT</span><h3>YDT Strategy</h3><p>Grammar, vocabulary, reading speed and exam decision-making for language-track candidates.</p><div class="course-meta"><span><i></i>Exam strategy</span><span><i></i>Weekly tests</span></div></article>
+          <article class="course-card" data-category="national"><span class="course-tag">Türkiye exams</span><span class="course-code">YDS</span><h3>YDS Precision</h3><p>High-yield language systems and close reading for academic and professional score goals.</p><div class="course-meta"><span><i></i>Question types</span><span><i></i>Error log</span></div></article>
+          <article class="course-card" data-category="national"><span class="course-tag">Academic English</span><span class="course-code">YÖK</span><h3>YÖKDİL Focus</h3><p>Field-aware vocabulary, reading control and practical exam technique without wasted study.</p><div class="course-meta"><span><i></i>Field focus</span><span><i></i>Mock cycles</span></div></article>
+          <article class="course-card" data-category="english"><span class="course-tag">Professional English</span><span class="course-code">BIZ</span><h3>Business English</h3><p>Meetings, presentations, interviews and writing that sound clear, capable and natural.</p><div class="course-meta"><span><i></i>Real scenarios</span><span><i></i>Career language</span></div></article>
+          <article class="course-card" data-category="english"><span class="course-tag">All levels</span><span class="course-code">A1+</span><h3>CEFR English</h3><p>A1 to C2 development with live speaking, useful language systems and visible progress.</p><div class="course-meta"><span><i></i>A1–C2</span><span><i></i>4 skills</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Score Transformation Wall -->
+    <section class="section" id="transformations" style="background: var(--mist);">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow mono">Proven Student Results</p><h2>Real score transformations.</h2></div>
+          <p>See how diagnostic focus, targeted error correction, and weekly live coaching turn plateaus into admission scores.</p>
+        </div>
+
+        <div class="transformations-grid">
+          <div class="transform-card">
+            <div class="transform-top">
+              <span class="transform-pill">IELTS Academic</span>
+              <span class="mono" style="color: var(--muted); font-size: .65rem;">7 Weeks</span>
+            </div>
+            <div class="transform-scores">
+              <div class="transform-score-box">
+                <small>Starting</small>
+                <strong class="score-old">5.5</strong>
+              </div>
+              <span class="transform-arrow">➔</span>
+              <div class="transform-score-box">
+                <small>Final Band</small>
+                <strong class="score-new">7.5</strong>
+              </div>
+            </div>
+            <p>"I was stuck at 6.0 in Writing Task 2 for months. Fixing paragraph unity and signposting boosted my score to 7.5 in under two months."</p>
+            <div class="transform-student">
+              <div class="student-avatar">BK</div>
+              <div>
+                <strong style="font-size: .82rem; display: block;">Bora K.</strong>
+                <span style="font-size: .7rem; color: var(--muted);">MSc Data Science · Univ. of Manchester</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform-card">
+            <div class="transform-top">
+              <span class="transform-pill" style="background: #eff8d7; color: #466c28;">YDT (YKS-Dil)</span>
+              <span class="mono" style="color: var(--muted); font-size: .65rem;">12 Weeks</span>
+            </div>
+            <div class="transform-scores">
+              <div class="transform-score-box">
+                <small>Starting</small>
+                <strong class="score-old">54 Net</strong>
+              </div>
+              <span class="transform-arrow">➔</span>
+              <div class="transform-score-box">
+                <small>Final Net</small>
+                <strong class="score-new" style="color: #2e680a;">76.25 Net</strong>
+              </div>
+            </div>
+            <p>"Paragraf sorularında ve cümle tamamlamada doğru taktiklerle çeldiricileri eleme refleksim oturdu. Türkiye sıralamamda ilk 400'e girdim."</p>
+            <div class="transform-student">
+              <div class="student-avatar" style="background: #2e680a;">ED</div>
+              <div>
+                <strong style="font-size: .82rem; display: block;">Elif D.</strong>
+                <span style="font-size: .7rem; color: var(--muted);">Boğaziçi Üniv. İngilizce Öğretmenliği</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform-card">
+            <div class="transform-top">
+              <span class="transform-pill">Speaking Fluency</span>
+              <span class="mono" style="color: var(--muted); font-size: .65rem;">8 Weeks</span>
+            </div>
+            <div class="transform-scores">
+              <div class="transform-score-box">
+                <small>Starting</small>
+                <strong class="score-old">B1 Hesitant</strong>
+              </div>
+              <span class="transform-arrow">➔</span>
+              <div class="transform-score-box">
+                <small>Outcome</small>
+                <strong class="score-new">Executive C1</strong>
+              </div>
+            </div>
+            <p>"No more translating word-for-word before speaking in global stakeholder meetings. The 1:1 speaking sessions built natural confidence."</p>
+            <div class="transform-student">
+              <div class="student-avatar">AT</div>
+              <div>
+                <strong style="font-size: .82rem; display: block;">Ahmet T.</strong>
+                <span style="font-size: .7rem; color: var(--muted);">Lead Software Architect · Fintech</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform-card">
+            <div class="transform-top">
+              <span class="transform-pill" style="background: #fdf2e9; color: #a04000;">YDS / YÖKDİL</span>
+              <span class="mono" style="color: var(--muted); font-size: .65rem;">6 Weeks</span>
+            </div>
+            <div class="transform-scores">
+              <div class="transform-score-box">
+                <small>Starting</small>
+                <strong class="score-old">62.5</strong>
+              </div>
+              <span class="transform-arrow">➔</span>
+              <div class="transform-score-box">
+                <small>Final Score</small>
+                <strong class="score-new" style="color: #a04000;">87.5</strong>
+              </div>
+            </div>
+            <p>"Akademik kelime ve bağlaç tablosu stratejisi sayesinde doçentlik yabancı dil puan barajını ilk denemede fazlasıyla aştım."</p>
+            <div class="transform-student">
+              <div class="student-avatar" style="background: #a04000;">SM</div>
+              <div>
+                <strong style="font-size: .82rem; display: block;">Dr. Selin M.</strong>
+                <span style="font-size: .7rem; color: var(--muted);">Tıp Fakültesi Öğretim Üyesi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section formats" id="formats">
+      <div class="container formats-grid">
+        <div class="split-copy">
+          <p class="eyebrow mono">Designed to stay personal</p>
+          <h2>Small by design. Serious by nature.</h2>
+          <p>No crowded rooms and no anonymous course conveyor belt. Choose the format that gives you the right balance of privacy, momentum and live practice.</p>
+          <div class="format-switcher" role="tablist" aria-label="Learning format options">
+            <button class="format-button active" type="button" data-format="private" role="tab" aria-selected="true"><span class="format-num">1</span><span><strong>Private 1:1 coaching</strong><span>Maximum focus, flexible direction</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+            <button class="format-button" type="button" data-format="vip" role="tab" aria-selected="false"><span class="format-num">3–5</span><span><strong>VIP small groups</strong><span>Matched goals, richer practice</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+            <button class="format-button" type="button" data-format="consult" role="tab" aria-selected="false"><span class="format-num">↗</span><span><strong>Strategy consultancy</strong><span>Expert plan, independent execution</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+          </div>
+        </div>
+
+        <div class="format-detail" id="formatDetail" role="tabpanel" aria-live="polite">
+          <div class="format-detail-top"><div><span class="mono">Your own learning room</span><h3 id="formatTitle">Private 1:1 coaching</h3></div><span class="format-badge" id="formatBadge">Most tailored</span></div>
+          <p id="formatDescription">A programme built around your exact level, target, schedule and learning habits—with every live minute focused on your next useful improvement.</p>
+          <ul class="format-list" id="formatList"><li>Individual diagnostic &amp; roadmap</li><li>Flexible pace and priorities</li><li>Personal written feedback</li><li>Between-session study plan</li></ul>
+          <div class="format-bottom"><span class="format-note" id="formatNote">Best for ambitious timelines, precise needs and complete privacy.</span><button class="btn btn-blue" type="button" data-open-consultation>Ask about 1:1</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section speaking" id="speaking">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow mono">L.B. Speaking Studio</p><h2>Your voice needs live practice.</h2></div>
+          <p>Low-pressure online sessions with a clear speaking purpose—because fluency grows through useful repetition, not silent study.</p>
+        </div>
+        <div class="session-board">
+          <div class="session-intro">
+            <span class="mono">Weekly live rooms</span>
+            <h3>Speak more. Notice more. Try again.</h3>
+            <p>Join a focused room at your level. Each session includes a theme, useful language and targeted tutor notes.</p>
+            <div class="session-features"><span class="session-feature"><i>✓</i>60-minute live online rooms</span><span class="session-feature"><i>✓</i>Level-matched participation</span><span class="session-feature"><i>✓</i>Actionable post-session notes</span></div>
+          </div>
+          <div class="session-list">
+            <article class="session-row"><div class="session-date">TUE<br>19:30</div><div><h4>B1 Conversation Lab</h4><p>Opinions, follow-up questions and natural turn-taking</p></div><button class="btn btn-light reserve-btn" type="button" data-session="B1 Conversation Lab">Reserve interest</button></article>
+            <article class="session-row"><div class="session-date">THU<br>20:00</div><div><h4>IELTS Speaking Room</h4><p>Parts 2 &amp; 3 with structured feedback</p></div><button class="btn btn-light reserve-btn" type="button" data-session="IELTS Speaking Room">Reserve interest</button></article>
+            <article class="session-row"><div class="session-date">SAT<br>11:00</div><div><h4>Business English Roundtable</h4><p>Meetings, persuasion and concise professional answers</p></div><button class="btn btn-light reserve-btn" type="button" data-session="Business English Roundtable">Reserve interest</button></article>
+            <article class="session-row"><div class="session-date">SUN<br>18:00</div><div><h4>A2 Confidence Club</h4><p>Everyday speaking with supportive correction</p></div><button class="btn btn-light reserve-btn" type="button" data-session="A2 Confidence Club">Reserve interest</button></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resources" id="resources">
+      <div class="container resource-layout">
+        <div class="resource-intro">
+          <p class="eyebrow mono">Two purpose-built libraries</p>
+          <h2>Open tools or crafted learning systems.</h2>
+          <p>The free library lives on its own website, so learners can search PDFs, documents, webpages and practical study tools without entering a shop.</p>
+          <p class="resource-promise">Premium does not mean “more files.” It means a tailored sequence of lessons, practice, feedback and review—built for a specific learning result.</p>
+          <div class="resource-tabs" role="tablist" aria-label="Resource collection"><button class="resource-tab active" type="button" role="tab" aria-selected="true" data-resource-tab="free">Free library</button><button class="resource-tab" type="button" role="tab" aria-selected="false" data-resource-tab="premium">Premium studio</button></div>
+        </div>
+        <div class="resource-grid" id="resourceGrid">
+          <article class="resource-card free resource-library-card"><div class="resource-cover"><strong>The Free Resource Library ↗</strong></div><div class="resource-type"><span>Separate website</span><span>Open access</span></div><h3>Search, filter and use what you need</h3><p>A dedicated learner site for useful exam and English resources—kept distinct from the premium catalogue.</p><div class="resource-delivery"><span>PDFs</span><span>Docs</span><span>Webpages</span><span>Tools</span></div><div class="resource-actions"><a class="btn btn-dark" href="resources.html">Visit the free library</a></div></article>
+          <article class="resource-card free"><div class="resource-cover"><strong>Printable &amp; editable study files</strong></div><div class="resource-type"><span>Download library</span><span>Free</span></div><h3>Keep the useful part, skip the clutter</h3><p>Focused checklists, worksheets, error logs and study planners in practical formats.</p><div class="resource-delivery"><span>PDF</span><span>DOC</span><span>Templates</span></div><div class="resource-actions"><a class="btn btn-dark" href="resources.html#library">Browse files</a></div></article>
+          <article class="resource-card free"><div class="resource-cover"><strong>Interactive practice webpages</strong></div><div class="resource-type"><span>Browser tools</span><span>Free</span></div><h3>Learn by doing, directly online</h3><p>Self-checks, planning tools and mini practice activities that work without a download.</p><div class="resource-delivery"><span>HTML</span><span>Web tools</span><span>Mini apps</span></div><div class="resource-actions"><a class="btn btn-dark" href="resources.html#library">Open web tools</a></div></article>
+          <article class="resource-card free"><div class="resource-cover"><strong>Exam &amp; English starter kits</strong></div><div class="resource-type"><span>Curated collections</span><span>Free</span></div><h3>Start with a small, sensible system</h3><p>Short collections for IELTS, TOEFL, SAT, YDT/YDS/YÖKDİL, speaking and CEFR learning.</p><div class="resource-delivery"><span>Mixed media</span><span>Study routes</span></div><div class="resource-actions"><a class="btn btn-dark" href="resources.html#library">Explore collections</a></div></article>
+
+          <article class="resource-card premium"><div class="resource-cover"><strong>IELTS Band 7 Writing Lab</strong></div><div class="resource-type"><span>Tailored learning system</span><span>Premium</span></div><h3>Build, test and transfer stronger writing</h3><p>A sequenced learning experience with original tasks, guided analysis, practice cycles and review evidence.</p><div class="resource-delivery"><span>Webapp</span><span>PDF workbook</span><span>Tutor video</span></div><div class="resource-actions"><button class="btn btn-blue preview-pack" type="button" data-pack="IELTS Band 7 Writing Lab">Preview the system</button><button class="save-btn" type="button" aria-label="Save IELTS premium pack" data-save="ielts-pro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4V4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button></div></article>
+          <article class="resource-card premium"><div class="resource-cover"><strong>YDT Reading Control Sprint</strong></div><div class="resource-type"><span>Purpose-built course pack</span><span>Premium</span></div><h3>Train speed without losing control</h3><p>Timed sets, decision logs, vocabulary review and progress checkpoints organised as one study route.</p><div class="resource-delivery"><span>Webpage</span><span>PDF</span><span>Tracker</span></div><div class="resource-actions"><button class="btn btn-blue preview-pack" type="button" data-pack="YDT Reading Control Sprint">Preview the system</button><button class="save-btn" type="button" aria-label="Save YDT premium pack" data-save="ydt-pro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4V4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button></div></article>
+          <article class="resource-card premium"><div class="resource-cover"><strong>Business English Meeting Studio</strong></div><div class="resource-type"><span>Scenario learning kit</span><span>Premium</span></div><h3>Lead the room, then handle the follow-up</h3><p>Realistic meeting scenarios connect language input, rehearsal, role play and concise professional writing.</p><div class="resource-delivery"><span>Slides</span><span>Role cards</span><span>Video</span><span>Docs</span></div><div class="resource-actions"><button class="btn btn-blue preview-pack" type="button" data-pack="Business English Meeting Studio">Preview the system</button><button class="save-btn" type="button" aria-label="Save Business English pack" data-save="biz-pro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4V4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button></div></article>
+          <article class="resource-card premium"><div class="resource-cover"><strong>TOEFL Integrated Response Lab</strong></div><div class="resource-type"><span>Multimedia skill lab</span><span>Premium</span></div><h3>Connect notes to complete answers</h3><p>Reading, listening, note-making, response frameworks and timed delivery built into one guided sequence.</p><div class="resource-delivery"><span>Webapp</span><span>Audio/video</span><span>Guided docs</span></div><div class="resource-actions"><button class="btn btn-blue preview-pack" type="button" data-pack="TOEFL Integrated Response Lab">Preview the system</button><button class="save-btn" type="button" aria-label="Save TOEFL premium pack" data-save="toefl-pro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4V4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section consultancy" id="consultancy">
+      <div class="container consultancy-grid">
+        <div class="roadmap" aria-label="Example exam preparation roadmap">
+          <div class="roadmap-top"><strong>Your exam roadmap</strong><span>Built after diagnosis</span></div>
+          <div class="roadmap-steps">
+            <div class="roadmap-step active"><i>01</i><div><h4>Clarify the target</h4><p>Score, date, current level, study reality and the reason the result matters.</p></div></div>
+            <div class="roadmap-step"><i>02</i><div><h4>Diagnose the gap</h4><p>Separate language limits, exam decisions, timing and study-system problems.</p></div></div>
+            <div class="roadmap-step"><i>03</i><div><h4>Sequence the work</h4><p>Turn the gap into weekly priorities, practice cycles and review evidence.</p></div></div>
+            <div class="roadmap-step"><i>04</i><div><h4>Track what changes</h4><p>Use performance evidence to adjust the plan before time is wasted.</p></div></div>
+          </div>
+        </div>
+        <div class="split-copy">
+          <p class="eyebrow mono">Exam preparation consultancy</p>
+          <h2>A plan before more practice.</h2>
+          <p>If you already study independently—or you are unsure which exam, course or timeline makes sense—start with a diagnostic consultation. Leave with priorities you can actually follow.</p>
+          <div class="service-chips"><span class="service-chip">Exam selection</span><span class="service-chip">Level diagnosis</span><span class="service-chip">Study-plan audit</span><span class="service-chip">Score timeline</span><span class="service-chip">Mock analysis</span></div>
+          <button class="btn btn-dark" type="button" data-open-wizard>Build my starting point</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section principles">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow mono">The L.B. difference</p><h2>Teaching that respects your time.</h2></div><p>Every part of the studio is built to make learning personal, visible and useful outside the lesson room.</p></div>
+        <div class="principle-grid">
+          <article class="principle"><div class="principle-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-13v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Purpose in every minute</h3><p>You always know what a task is training, why it matters and what to notice next time.</p></article>
+          <article class="principle"><div class="principle-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18V9m5 9V5m6 13v-6m5 6V3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Evidence over guesswork</h3><p>Decisions come from your answers, speaking, writing and habits—not a generic calendar.</p></article>
+          <article class="principle"><div class="principle-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10a4 4 0 1 1 8 0c0 3-4 3-4 6m0 4h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Feedback that travels</h3><p>Correction becomes a reusable strategy, so the insight follows you into the next task and the real world.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container faq-grid">
+        <div class="split-copy"><p class="eyebrow mono">Before we begin</p><h2>Good questions are welcome.</h2><p>Still unsure? A free consultation is the simplest way to find the right starting point.</p><button class="btn btn-blue" type="button" data-open-consultation>Ask about your goal</button></div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="true"><span>Are the classes fully online?</span><span>+</span></button><div class="faq-answer"><div><p>Yes. Coaching, VIP classes, speaking rooms and consultations are designed for live online delivery. Your study plan and resources stay accessible between sessions.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>How are VIP groups formed?</span><span>+</span></button><div class="faq-answer"><div><p>Groups stay at 3–5 learners and are matched by level, goal, timetable and learning pace. If the fit is not right, private coaching is the better route.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Can I book consultancy without joining a course?</span><span>+</span></button><div class="faq-answer"><div><p>Yes. Consultancy can stand alone. It is useful when you need an exam choice, a realistic roadmap, a mock-performance analysis or a better independent study system.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Do you teach complete beginners and advanced learners?</span><span>+</span></button><div class="faq-answer"><div><p>Yes. General English pathways cover CEFR A1–C2. A short level conversation helps confirm the right route and whether private or small-group learning fits best.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Are premium resources included in a course?</span><span>+</span></button><div class="faq-answer"><div><p>Course materials are selected for each programme. Standalone premium packs are for learners who want deeper independent practice; your consultation can clarify what is already included.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container cta-panel">
+        <div class="cta-copy"><p class="eyebrow mono" style="color:var(--lime)">Your next step can be simple</p><h2>Bring the goal. We’ll build the route.</h2><p>Tell us what you are preparing for, where you are now and when the result matters. Your first conversation is free.</p><div class="cta-actions"><button class="btn btn-sky" type="button" data-open-consultation>Book a free consultation</button><button class="btn btn-light" type="button" data-open-wizard>Find my programme</button></div></div>
+        <div class="cta-visual" aria-hidden="true"><div class="score-sheet"><span class="mono">Personal diagnostic snapshot</span><h3>Your priorities</h3><p>A clear view of what to strengthen first.</p><div class="score-line"><span>Language base</span><span class="score-bar"><i style="width:72%"></i></span><strong>72</strong></div><div class="score-line"><span>Exam control</span><span class="score-bar"><i style="width:48%"></i></span><strong>48</strong></div><div class="score-line"><span>Timed accuracy</span><span class="score-bar"><i style="width:61%"></i></span><strong>61</strong></div><div class="score-line"><span>Study system</span><span class="score-bar"><i style="width:42%"></i></span><strong>42</strong></div></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about"><a href="#top" aria-label="L.B. English Co. home"><img class="footer-logo" src="assets/lb-english-co-logo-selected.png" alt="L.B. English Co. — Private Learning Studio" width="600" height="600" loading="lazy"></a><p>Private online English coaching, speaking practice, exam consultancy and resources for ambitious learners.</p></div>
+        <div class="footer-col"><h3>Learn</h3><a href="ielts.html">IELTS Hub ↗</a><a href="ydt-yds.html">YDT &amp; YDS Hub ↗</a><a href="speaking.html">Speaking Studio ↗</a><a href="resources.html">Free Resource Library ↗</a><a href="#resources" data-resource-target="premium">Premium Studio</a></div>
+        <div class="footer-col"><h3>Tools &amp; Tests</h3><button type="button" data-open-quiz>5-Min Score Predictor</button><button type="button" data-open-planner>Study Schedule Builder</button><button type="button" data-open-wizard>Programme Finder</button><a href="resources.html#interactive-tools">Score Equivalency Matrix</a></div>
+        <div class="footer-col"><h3>Coaching</h3><button type="button" data-open-consultation>Free Consultation</button><a href="#formats">VIP Formats</a><a href="#transformations">Score Results</a><a href="#faq">Questions &amp; FAQ</a></div>
+      </div>
+      <div class="footer-legal">
+        <div class="footer-legal-copy">
+          <strong>Independent education &amp; results notice</strong>
+          <p>L.B. English Co. is an independent education platform and is not affiliated with or endorsed by the owners of IELTS, TOEFL, SAT or Türkiye’s national examination brands. All exam names and trademarks belong to their respective owners.</p>
+          <p>Teaching, consultancy and resources support preparation; no particular score, admission result or learning outcome is guaranteed. Results depend on the learner’s starting point, participation, practice and exam-day performance.</p>
+        </div>
+        <nav class="footer-legal-links" aria-label="Legal information">
+          <a href="legal.html#privacy">Privacy &amp; KVKK notice</a>
+          <a href="legal.html#terms">Terms of service</a>
+          <a href="legal.html#cookies">Cookie &amp; storage notice</a>
+          <a href="legal.html#digital-products">Digital products &amp; refunds</a>
+          <a href="legal.html#accessibility">Accessibility</a>
+          <a href="legal.html#operator">Operator information</a>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> L.B. English Co. All rights reserved.</span><span>Legal information reviewed: 21 August 2026</span><span class="status"><i></i>Online studio open</span></div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta"><button class="btn btn-sky" type="button" data-open-consultation>Book a free consultation</button></div>
+
+  <div class="modal" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="consultationTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close consultation form" data-close-modal>×</button>
+      <div id="consultationFormWrap">
+        <span class="mono">Free first conversation</span>
+        <h2 id="consultationTitle">Tell us where you want to go.</h2>
+        <p class="modal-lead">Share a few details. We’ll use them to make the first conversation useful from minute one.</p>
+        <form id="consultationForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Name and surname"></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+            <div class="field"><label for="goal">Main goal</label><select id="goal" name="goal" required><option value="">Choose one</option><option>IELTS</option><option>SAT English</option><option>TOEFL</option><option>YDT / YDS / YÖKDİL</option><option>Business English</option><option>General English</option><option>Speaking practice</option><option>Exam consultancy</option></select></div>
+            <div class="field"><label for="format">Preferred format</label><select id="format" name="format"><option>I’m not sure yet</option><option>Private 1:1</option><option>VIP group of 3–5</option><option>Consultancy only</option></select></div>
+            <div class="field full"><label for="message">What should we know?</label><textarea id="message" name="message" placeholder="Current level, target score, exam date or anything you want help with"></textarea></div>
+          </div>
+          <p class="form-note">This prototype does not transmit your details. Before launch, connect a secure form service and display the final consultation-specific <a href="legal.html#privacy"><u>privacy &amp; KVKK notice</u></a> at the point of collection.</p>
+          <button class="btn btn-blue" type="submit">Request my free consultation</button>
+        </form>
+      </div>
+      <div class="form-success" id="consultationSuccess"><span class="success-icon">✓</span><h3>Your request is ready.</h3><p>Thanks, <span id="successName">there</span>. In the live site, this will send your details to L.B. English Co. and trigger your booking follow-up.</p><button class="btn btn-dark" type="button" data-close-modal>Done</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="wizardModal" role="dialog" aria-modal="true" aria-labelledby="wizardTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close programme finder" data-close-modal>×</button>
+      <span class="mono">60-second programme finder</span>
+      <h2 id="wizardTitle">Find your strongest starting point.</h2>
+      <p class="modal-lead">Three quick choices. No email needed.</p>
+      <div class="wizard-progress" aria-hidden="true"><i class="active"></i><i></i><i></i></div>
+      <div class="wizard-step active" data-step="1"><h3>What matters most right now?</h3><div class="choice-grid"><button class="choice" type="button" data-key="goal" data-value="exam"><strong>Pass or improve an exam</strong><span>IELTS, SAT, TOEFL, YDT, YDS, YÖKDİL</span></button><button class="choice" type="button" data-key="goal" data-value="speaking"><strong>Speak with more confidence</strong><span>Fluency, interaction and useful feedback</span></button><button class="choice" type="button" data-key="goal" data-value="career"><strong>Perform better at work</strong><span>Meetings, presentations and interviews</span></button><button class="choice" type="button" data-key="goal" data-value="general"><strong>Build my overall English</strong><span>A complete A1–C2 learning pathway</span></button></div></div>
+      <div class="wizard-step" data-step="2"><h3>How close is your deadline?</h3><div class="choice-grid"><button class="choice" type="button" data-key="timeline" data-value="urgent"><strong>Under 6 weeks</strong><span>I need priorities quickly</span></button><button class="choice" type="button" data-key="timeline" data-value="planned"><strong>2–3 months</strong><span>I have a clear target window</span></button><button class="choice" type="button" data-key="timeline" data-value="long"><strong>4+ months</strong><span>I can build steadily</span></button><button class="choice" type="button" data-key="timeline" data-value="flexible"><strong>No fixed date</strong><span>I want the right pace</span></button></div></div>
+      <div class="wizard-step" data-step="3"><h3>Which learning room feels right?</h3><div class="choice-grid"><button class="choice" type="button" data-key="format" data-value="private"><strong>Private 1:1</strong><span>Maximum personal attention</span></button><button class="choice" type="button" data-key="format" data-value="vip"><strong>VIP group of 3–5</strong><span>Small, social and focused</span></button><button class="choice" type="button" data-key="format" data-value="consult"><strong>Consultancy only</strong><span>I’ll study independently</span></button><button class="choice" type="button" data-key="format" data-value="unsure"><strong>Help me decide</strong><span>I’m open to the best fit</span></button></div></div>
+      <div class="wizard-result" id="wizardResult"><span class="mono">Your recommended start</span><h3 id="resultTitle">Private Exam Roadmap</h3><p id="resultCopy"></p><button class="btn btn-blue" type="button" id="resultConsultation">Discuss this route</button></div>
+      <div class="wizard-actions" id="wizardActions"><button class="btn btn-light" type="button" id="wizardBack" disabled>Back</button><button class="btn btn-dark" type="button" id="wizardNext" disabled>Continue</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="packModal" role="dialog" aria-modal="true" aria-labelledby="packTitle" aria-hidden="true">
+    <div class="modal-card"><button class="modal-close" type="button" aria-label="Close resource preview" data-close-modal>×</button><span class="mono">Premium resource preview</span><h2 id="packTitle">Resource pack</h2><p class="modal-lead">A structured independent-practice pack with original tasks, guided review and a clear sequence.</p><div class="feedback-note"><strong>Inside the pack</strong>Skill map · Guided examples · Timed practice · Review prompts · Reusable progress tracker</div><div class="feedback-note lime"><strong>Best for</strong>Learners who want serious practice between live sessions or as a standalone study sprint.</div><p class="form-note">Product pricing and checkout can be connected when your catalogue is final.</p><button class="btn btn-blue" type="button" data-open-consultation>Ask about this pack</button></div>
+  </div>
+
+  <!-- Diagnostic Score Predictor Quiz Modal -->
+  <div class="modal" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close diagnostic quiz" data-close-modal>×</button>
+      <span class="mono">Instant Level &amp; Score Predictor</span>
+      <h2 id="quizTitle">5-Minute English Diagnostic</h2>
+      <p class="modal-lead" id="quizLead">Answer 8 quick questions to calculate your estimated CEFR level and predicted exam scores.</p>
+      
+      <div id="quizContainer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 12px 0 16px;">
+          <span class="mono" id="quizProgressLabel" style="color: var(--blue);">Question 1 of 8</span>
+          <span class="mono" id="quizCategoryLabel" style="color: var(--muted);">Grammar Precision</span>
+        </div>
+        <h3 id="quizQuestionText" style="font-size: 1.15rem; margin: 0 0 14px;">By the time the delegation arrived, the executive committee _______ the agreement.</h3>
+        <div class="quiz-options" id="quizOptions">
+          <!-- Options rendered via JS -->
+        </div>
+      </div>
+
+      <div id="quizResultArea" style="display: none;">
+        <div class="quiz-result-box">
+          <span class="mono" style="color: var(--sky);">Estimated Level</span>
+          <strong class="level" id="resCefr">B2</strong>
+          <span id="resTitle" style="font-weight: 700; font-size: .95rem; display: block; margin-bottom: 6px;">Upper-Intermediate / Vantage</span>
+          <p id="resDescription" style="font-size: .82rem; color: #cbd6e2; margin: 0; line-height: 1.5;"></p>
+          
+          <div class="quiz-breakdown-grid">
+            <div class="breakdown-col">
+              <span>Predicted IELTS</span>
+              <strong id="resIelts">6.5 - 7.0</strong>
+            </div>
+            <div class="breakdown-col">
+              <span>Predicted YDT Net</span>
+              <strong id="resYdt">64 - 72</strong>
+            </div>
+            <div class="breakdown-col">
+              <span>Predicted YDS / YÖK</span>
+              <strong id="resYds">72 - 82</strong>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn btn-blue" id="quizApplyConsult" type="button" style="flex: 1;">Discuss Plan in Free Consultation</button>
+          <button class="btn btn-light" id="quizRetake" type="button">Retake Quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Study Planner Modal -->
+  <div class="modal" id="plannerModal" role="dialog" aria-modal="true" aria-labelledby="plannerTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close study planner" data-close-modal>×</button>
+      <span class="mono">Custom Study Routine Builder</span>
+      <h2 id="plannerTitle">Generate Your Weekly Study Roadmap</h2>
+      <p class="modal-lead">Build a realistic day-by-day weekly study schedule based on your target exam and weekly available hours.</p>
+
+      <form id="plannerForm" style="margin-top: 18px;">
+        <div class="form-grid">
+          <div class="field">
+            <label for="planExam">Target Goal / Exam</label>
+            <select id="planExam" required>
+              <option value="IELTS">IELTS Academic / General</option>
+              <option value="YDT">YDT (YKS-Dil 80 Soru)</option>
+              <option value="YDS">YDS &amp; YÖKDİL Academic</option>
+              <option value="Speaking">Executive Speaking Fluency</option>
+              <option value="General">General CEFR Progression</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="planHours">Weekly Available Hours</label>
+            <select id="planHours" required>
+              <option value="4">4 hours / week (Steady Pace)</option>
+              <option value="8" selected>8 hours / week (Recommended Sprint)</option>
+              <option value="14">14+ hours / week (Intensive Fast-Track)</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-dark" type="submit" style="width: 100%; margin-top: 14px;">Generate My Weekly Schedule ↓</button>
+      </form>
+
+      <div id="plannerResult" style="display: none; margin-top: 24px;">
+        <div class="schedule-output" id="scheduleList">
+          <!-- Schedule days rendered via JS -->
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 16px;">
+          <button class="btn btn-blue" id="downloadScheduleBtn" type="button" style="flex: 1;">📥 Download Study Plan (.txt)</button>
+          <button class="btn btn-sky" type="button" data-open-consultation>Review Plan with Tutor</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Multi-Channel Quick-Connect -->
+  <div class="quick-connect" aria-label="Quick Connect Options">
+    <a class="quick-pill quick-pill-wa" href="https://wa.me/?text=Hello%20L.B.%20English%20Co.,%20I%20would%20like%20to%20inquire%20about%20your%20English%20and%20exam%20coaching%20programs." target="_blank" rel="noopener" title="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.12c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.69-.94-3.25-1.35-5.34-4.66-5.5-4.88-.16-.22-1.32-1.76-1.32-3.36s.83-2.39 1.12-2.72c.3-.33.65-.41.87-.41.22 0 .43.01.62.02.2.01.47-.08.73.55.27.65.92 2.25 1 2.41.08.16.14.36.03.58-.11.22-.16.36-.33.55-.16.2-.35.44-.5.59-.16.16-.33.34-.14.67.19.33.85 1.4 1.82 2.26 1.25 1.11 2.3 1.45 2.63 1.61.33.16.52.14.71-.08.19-.22.82-.95 1.04-1.28.22-.33.44-.27.73-.16.3.11 1.88.89 2.2 1.05.33.16.55.25.63.38.08.14.08.8-.16 1.48z"/></svg>
+      <span>WhatsApp Us</span>
+    </a>
+    <button class="quick-pill quick-pill-cal" type="button" data-open-consultation title="Book a Free Diagnostic Call">
+      <span>📅 Book Free Call</span>
+    </button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><i>✓</i><span id="toastText">Saved.</span></div>
+
+  <script>
+    (() => {
+      const $ = (selector, context = document) => context.querySelector(selector);
+      const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
+      const header = $('#siteHeader');
+      const menuButton = $('#menuButton');
+      const navLinks = $('#navLinks');
+      let lastFocused = null;
+      let toastTimer;
+
+      const showToast = (message) => {
+        $('#toastText').textContent = message;
+        $('#toast').classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => $('#toast').classList.remove('show'), 3200);
+      };
+
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 18);
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+
+      menuButton.addEventListener('click', () => {
+        const open = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!open));
+        menuButton.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+        navLinks.classList.toggle('open', !open);
+      });
+      $$('#navLinks a').forEach(link => link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open menu');
+      }));
+
+      const modals = $$('.modal');
+      const openModal = (modal) => {
+        lastFocused = document.activeElement;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        setTimeout(() => $('.modal-close', modal)?.focus(), 20);
+      };
+      const closeModal = (modal) => {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        if (!$('.modal.open')) document.body.classList.remove('modal-open');
+        lastFocused?.focus();
+      };
+      $$('[data-open-consultation]').forEach(btn => btn.addEventListener('click', () => {
+        const parentModal = btn.closest('.modal');
+        if (parentModal) closeModal(parentModal);
+        openModal($('#consultationModal'));
+      }));
+      $$('[data-open-wizard]').forEach(btn => btn.addEventListener('click', () => openModal($('#wizardModal'))));
+      $$('[data-close-modal]').forEach(btn => btn.addEventListener('click', () => closeModal(btn.closest('.modal'))));
+      modals.forEach(modal => modal.addEventListener('mousedown', event => { if (event.target === modal) closeModal(modal); }));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          const activeModal = $('.modal.open');
+          if (activeModal) closeModal(activeModal);
+        }
+      });
+
+      $$('.studio-tab').forEach(tab => tab.addEventListener('click', () => {
+        $$('.studio-tab').forEach(item => item.setAttribute('aria-selected', 'false'));
+        $$('.studio-panel').forEach(panel => panel.classList.remove('active'));
+        tab.setAttribute('aria-selected', 'true');
+        $(`#studio-${tab.dataset.studio}`).classList.add('active');
+      }));
+
+      $$('.filter-btn').forEach(button => button.addEventListener('click', () => {
+        $$('.filter-btn').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        $$('.course-card').forEach(card => card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter));
+      }));
+
+      const formatData = {
+        private: {
+          title: 'Private 1:1 coaching', badge: 'Most tailored',
+          description: 'A programme built around your exact level, target, schedule and learning habits—with every live minute focused on your next useful improvement.',
+          list: ['Individual diagnostic & roadmap', 'Flexible pace and priorities', 'Personal written feedback', 'Between-session study plan'],
+          note: 'Best for ambitious timelines, precise needs and complete privacy.', cta: 'Ask about 1:1'
+        },
+        vip: {
+          title: 'VIP groups of 3–5', badge: 'Best shared energy',
+          description: 'A genuinely small live class with carefully matched learners. You get real speaking time, shared momentum and individual feedback without disappearing into a crowd.',
+          list: ['Level & goal matched group', 'Plenty of live participation', 'Individual progress notes', 'Peer learning without pressure'],
+          note: 'Best for learners who grow through interaction and steady group momentum.', cta: 'Ask about VIP groups'
+        },
+        consult: {
+          title: 'Exam strategy consultancy', badge: 'Plan-first route',
+          description: 'A focused diagnostic and planning engagement for independent learners who need expert direction, stronger priorities or a clear response to a plateau.',
+          list: ['Exam and timeline analysis', 'Current-performance diagnosis', 'Prioritised study roadmap', 'Follow-up review option'],
+          note: 'Best when you can study alone but need the right map and milestones.', cta: 'Ask about consultancy'
+        }
+      };
+      $$('.format-button').forEach(button => button.addEventListener('click', () => {
+        $$('.format-button').forEach(item => { item.classList.remove('active'); item.setAttribute('aria-selected', 'false'); });
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        const data = formatData[button.dataset.format];
+        $('#formatTitle').textContent = data.title;
+        $('#formatBadge').textContent = data.badge;
+        $('#formatDescription').textContent = data.description;
+        $('#formatList').innerHTML = data.list.map(item => `<li>${item}</li>`).join('');
+        $('#formatNote').textContent = data.note;
+        $('#formatDetail .btn').textContent = data.cta;
+      }));
+
+      $$('.reserve-btn').forEach(button => button.addEventListener('click', () => {
+        $('#goal').value = 'Speaking practice';
+        $('#message').value = `I’m interested in the ${button.dataset.session}.`;
+        openModal($('#consultationModal'));
+      }));
+
+      $$('.resource-tab').forEach(button => button.addEventListener('click', () => {
+        $$('.resource-tab').forEach(item => { item.classList.remove('active'); item.setAttribute('aria-selected', 'false'); });
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        $('#resourceGrid').classList.toggle('show-premium', button.dataset.resourceTab === 'premium');
+      }));
+
+      $$('[data-resource-target]').forEach(link => link.addEventListener('click', () => {
+        const target = link.dataset.resourceTarget;
+        const tab = $(`.resource-tab[data-resource-tab="${target}"]`);
+        if (tab) tab.click();
+      }));
+
+      const resourceText = {
+        ielts: `L.B. ENGLISH CO. — IELTS WRITING TASK 2 SELF-CHECK\n\n1. Have I answered every part of the question?\n2. Is my position clear in the introduction?\n3. Does each paragraph have one controlled main idea?\n4. Does every example support that idea directly?\n5. Have I explained the link instead of assuming it?\n6. Are my topic sentences specific?\n7. Have I used linking words for meaning, not decoration?\n8. Are key terms paraphrased accurately?\n9. Have I checked sentence boundaries?\n10. Have I checked articles and subject-verb agreement?\n11. Is the conclusion concise and consistent?\n12. What ONE improvement will I transfer to my next essay?`,
+        yds: `L.B. ENGLISH CO. — YDS VOCABULARY ERROR LOG\n\nWord / phrase:\nMeaning in this question:\nPart of speech:\nSentence clue I missed:\nCommon collocation:\nMy new example sentence:\nWhy I chose the wrong option:\nNext review: 1 day / 3 days / 7 days / 14 days`,
+        speaking: `L.B. ENGLISH CO. — 7-DAY SPEAKING RESET\n\nDay 1: Describe a familiar place for 60 seconds.\nDay 2: Retell yesterday’s routine with three time markers.\nDay 3: Give an opinion and two reasons.\nDay 4: Compare two ways of learning.\nDay 5: Explain a problem and a practical solution.\nDay 6: Record the Day 3 prompt again; notice one improvement.\nDay 7: Speak for two minutes, listen back, and choose one next focus.`,
+        sat: `L.B. ENGLISH CO. — DIGITAL SAT PACING MAP\n\nPass 1: Solve direct evidence and grammar decisions efficiently.\nPass 2: Return to dense inference and paired-information items.\nWhen stuck: name the task, eliminate by rule, then choose.\nCheckpoint: protect the final review window instead of chasing one item.\nAfter the module: log whether the issue was concept, reading, decision or time.`
+      };
+      $$('.download-btn').forEach(button => button.addEventListener('click', () => {
+        const key = button.dataset.download;
+        const blob = new Blob([resourceText[key]], { type: 'text/plain;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `lb-english-${key}-resource.txt`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+        showToast('Your free L.B. resource is downloading.');
+      }));
+
+      const savedResources = new Set(JSON.parse(localStorage.getItem('lbSavedResources') || '[]'));
+      const syncSaves = () => $$('.save-btn').forEach(button => {
+        const saved = savedResources.has(button.dataset.save);
+        button.classList.toggle('saved', saved);
+        button.setAttribute('aria-pressed', String(saved));
+        button.setAttribute('aria-label', `${saved ? 'Remove' : 'Save'} ${button.dataset.save} resource`);
+      });
+      syncSaves();
+      $$('.save-btn').forEach(button => button.addEventListener('click', () => {
+        const key = button.dataset.save;
+        if (savedResources.has(key)) { savedResources.delete(key); showToast('Removed from your saved resources.'); }
+        else { savedResources.add(key); showToast('Saved on this device for later.'); }
+        localStorage.setItem('lbSavedResources', JSON.stringify([...savedResources]));
+        syncSaves();
+      }));
+
+      $$('.preview-pack').forEach(button => button.addEventListener('click', () => {
+        $('#packTitle').textContent = button.dataset.pack;
+        openModal($('#packModal'));
+      }));
+
+      $$('.faq-question').forEach(button => button.addEventListener('click', () => {
+        const open = button.getAttribute('aria-expanded') === 'true';
+        $$('.faq-question').forEach(item => item.setAttribute('aria-expanded', 'false'));
+        button.setAttribute('aria-expanded', String(!open));
+      }));
+
+      $('#consultationForm').addEventListener('submit', event => {
+        event.preventDefault();
+        $('#successName').textContent = ($('#name').value.trim().split(' ')[0] || 'there');
+        $('#consultationFormWrap').style.display = 'none';
+        $('#consultationSuccess').classList.add('show');
+      });
+
+      const wizard = { step: 1, answers: {} };
+      const progress = $$('.wizard-progress i');
+      const steps = $$('.wizard-step');
+      const next = $('#wizardNext');
+      const back = $('#wizardBack');
+      const actions = $('#wizardActions');
+      const result = $('#wizardResult');
+
+      const renderWizard = () => {
+        steps.forEach(step => step.classList.toggle('active', Number(step.dataset.step) === wizard.step));
+        progress.forEach((bar, index) => bar.classList.toggle('active', index < wizard.step));
+        back.disabled = wizard.step === 1;
+        next.disabled = !wizard.answers[['goal', 'timeline', 'format'][wizard.step - 1]];
+        next.textContent = wizard.step === 3 ? 'See my recommendation' : 'Continue';
+      };
+      $$('.choice').forEach(choice => choice.addEventListener('click', () => {
+        const key = choice.dataset.key;
+        wizard.answers[key] = choice.dataset.value;
+        $$(`.choice[data-key="${key}"]`).forEach(item => item.classList.remove('selected'));
+        choice.classList.add('selected');
+        next.disabled = false;
+      }));
+      next.addEventListener('click', () => {
+        if (wizard.step < 3) { wizard.step += 1; renderWizard(); return; }
+        const { goal, timeline, format } = wizard.answers;
+        let title = 'Personal English Roadmap';
+        let copy = 'Start with a short level conversation, then build a clear CEFR pathway around the skills you use most.';
+        if (goal === 'exam' && (timeline === 'urgent' || format === 'consult')) {
+          title = 'Exam Strategy Sprint'; copy = 'Your timeline calls for diagnosis before volume. Start with a performance audit and a prioritised roadmap; then decide whether focused 1:1 coaching is needed.';
+        } else if (goal === 'exam') {
+          title = format === 'vip' ? 'VIP Exam Mastery' : 'Private Exam Mastery'; copy = 'Begin with a diagnostic across exam knowledge, language and timing. Your weekly plan should alternate skill-building, timed application and evidence-based review.';
+        } else if (goal === 'speaking') {
+          title = format === 'private' ? 'Private Speaking Accelerator' : 'L.B. Speaking Studio'; copy = 'Build fluency through live, level-matched practice, useful language and a small feedback focus you can transfer into the next conversation.';
+        } else if (goal === 'career') {
+          title = 'Business English Studio'; copy = 'Use your real meetings, presentations, interviews or writing as the curriculum, with live rehearsal and concise professional feedback.';
+        }
+        $('#resultTitle').textContent = title;
+        $('#resultCopy').textContent = copy;
+        steps.forEach(step => step.classList.remove('active'));
+        result.classList.add('show');
+        actions.style.display = 'none';
+      });
+      back.addEventListener('click', () => { if (wizard.step > 1) { wizard.step -= 1; renderWizard(); } });
+      $('#resultConsultation').addEventListener('click', () => {
+        const resultTitle = $('#resultTitle').textContent;
+        closeModal($('#wizardModal'));
+        $('#message').value = `The programme finder recommended: ${resultTitle}. I’d like to discuss this route.`;
+        openModal($('#consultationModal'));
+      });
+
+      // Diagnostic Quiz & Planner Open Handlers
+      $$('[data-open-quiz]').forEach(btn => btn.addEventListener('click', () => {
+        const parentModal = btn.closest('.modal');
+        if (parentModal) closeModal(parentModal);
+        openModal($('#quizModal'));
+        initQuiz();
+      }));
+      $$('[data-open-planner]').forEach(btn => btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parentModal = btn.closest('.modal');
+        if (parentModal) closeModal(parentModal);
+        openModal($('#plannerModal'));
+      }));
+
+      // Diagnostic Quiz Engine
+      const quizQuestions = [
+        {
+          cat: "Grammar: Tense & Aspect",
+          q: "By the time the delegation arrived, the executive committee _______ the agreement.",
+          opts: ["had finalized", "was finalized", "has been finalized", "finalizes"],
+          ans: 0
+        },
+        {
+          cat: "Lexical: Natural Collocations",
+          q: "The company's new environmental strategy was met with _______ opposition from competitors.",
+          opts: ["fierce", "harshly", "stout", "unbreakable"],
+          ans: 0
+        },
+        {
+          cat: "Grammar: Participle Clauses",
+          q: "Despite _______ rigorously for the debate, he struggled with the spontaneous cross-examination.",
+          opts: ["having prepared", "had prepared", "prepared", "to prepare"],
+          ans: 0
+        },
+        {
+          cat: "Academic: Vocabulary Nuance",
+          q: "Recent clinical trials appear to _______ the claims made in the initial research paper.",
+          opts: ["corroborate", "collaborate", "coerce", "correlate"],
+          ans: 0
+        },
+        {
+          cat: "Advanced: Inversion & Emphasis",
+          q: "Rarely _______ such rapid improvement in a student's academic writing within four weeks.",
+          opts: ["have we observed", "we observed", "did we had observed", "we have observed"],
+          ans: 0
+        },
+        {
+          cat: "Reading: Discourse Markers",
+          q: "The initial investment was substantial; _______, the operational efficiency gains justified the expenditure.",
+          opts: ["nevertheless", "in addition to", "whereas", "on the contrary"],
+          ans: 0
+        },
+        {
+          cat: "Phrasal Verb & Prepositional Logic",
+          q: "The international team must _______ the issue before public trust is permanently eroded.",
+          opts: ["tackle", "deal out", "cope up with", "prevail on"],
+          ans: 0
+        },
+        {
+          cat: "Grammar: Subject-Verb Agreement",
+          q: "Neither the lead researcher nor the laboratory assistants _______ aware of the sample contamination.",
+          opts: ["were", "was", "has been", "is"],
+          ans: 0
+        }
+      ];
+
+      let qIdx = 0, qScore = 0;
+      const qContainer = $('#quizContainer'), qResult = $('#quizResultArea');
+      const qText = $('#quizQuestionText'), qOpts = $('#quizOptions');
+      const qProg = $('#quizProgressLabel'), qCat = $('#quizCategoryLabel');
+
+      const initQuiz = () => {
+        qIdx = 0; qScore = 0;
+        qContainer.style.display = 'block';
+        qResult.style.display = 'none';
+        renderQuestion();
+      };
+
+      const renderQuestion = () => {
+        const item = quizQuestions[qIdx];
+        qProg.textContent = `Question ${qIdx + 1} of ${quizQuestions.length}`;
+        qCat.textContent = item.cat;
+        qText.textContent = item.q;
+        qOpts.innerHTML = item.opts.map((opt, i) => `<button class="quiz-opt" type="button" data-opt="${i}">${opt}</button>`).join('');
+        $$('.quiz-opt', qOpts).forEach(btn => btn.addEventListener('click', () => {
+          const chosen = Number(btn.dataset.opt);
+          if (chosen === item.ans) qScore++;
+          qIdx++;
+          if (qIdx < quizQuestions.length) {
+            renderQuestion();
+          } else {
+            showQuizResults();
+          }
+        }));
+      };
+
+      const showQuizResults = () => {
+        qContainer.style.display = 'none';
+        qResult.style.display = 'block';
+
+        let cefr = 'B2', title = 'Upper-Intermediate / Vantage', desc = '', ielts = '6.5', ydt = '64 - 70', yds = '75 - 82';
+        if (qScore >= 7) {
+          cefr = 'C1'; title = 'Advanced / Effective Operational';
+          desc = 'High grammatical control and sophisticated vocabulary. Ready for Band 7.5+ or 75+ YDT Net with exam-specific calibration.';
+          ielts = '7.5 - 8.5'; ydt = '74 - 78'; yds = '85 - 95';
+        } else if (qScore >= 5) {
+          cefr = 'B2'; title = 'Upper-Intermediate / Vantage';
+          desc = 'Solid core mechanics with minor collocation and clause structure gaps. Targeted coaching can fast-track you to C1.';
+          ielts = '6.0 - 7.0'; ydt = '62 - 72'; yds = '70 - 82';
+        } else if (qScore >= 3) {
+          cefr = 'B1'; title = 'Intermediate / Threshold';
+          desc = 'Good foundational communication. Priority should be academic sentence construction, discourse markers, and timed fluency.';
+          ielts = '5.0 - 5.5'; ydt = '48 - 60'; yds = '55 - 68';
+        } else {
+          cefr = 'A2'; title = 'Foundational / Waystage';
+          desc = 'Essential basics present. A structured CEFR roadmap focusing on high-frequency vocabulary and tense confidence is recommended.';
+          ielts = '4.0 - 4.5'; ydt = '35 - 46'; yds = '40 - 52';
+        }
+
+        $('#resCefr').textContent = cefr;
+        $('#resTitle').textContent = title;
+        $('#resDescription').textContent = desc;
+        $('#resIelts').textContent = ielts;
+        $('#resYdt').textContent = ydt;
+        $('#resYds').textContent = yds;
+      };
+
+      $('#quizRetake').addEventListener('click', initQuiz);
+      $('#quizApplyConsult').addEventListener('click', () => {
+        const cefr = $('#resCefr').textContent;
+        const ielts = $('#resIelts').textContent;
+        closeModal($('#quizModal'));
+        $('#message').value = `I completed the 5-min diagnostic quiz. Estimated Level: ${cefr} (Predicted IELTS: ${ielts}). I'd like to plan my coaching roadmap.`;
+        openModal($('#consultationModal'));
+      });
+
+      // Study Planner Engine
+      $('#plannerForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const exam = $('#planExam').value;
+        const hours = $('#planHours').value;
+        
+        const scheduleTemplates = {
+          IELTS: [
+            { day: "MON", title: "Writing Task 2 Architecture", desc: "Paragraph unity, thesis statements & high-yield Band 8 collocations." },
+            { day: "TUE", title: "Academic Reading Timed Sprint", desc: "True/False/Not Given & Heading matching pass with pacing stopwatch." },
+            { day: "WED", title: "Speaking Part 2 & 3 Fluency", desc: "Record 2-minute cue card and review tense transitions." },
+            { day: "THU", title: "Writing Task 1 Data Synthesis", desc: "Describing trends, comparing bar charts, and writing concise overviews." },
+            { day: "FRI", title: "Listening Section 3 & 4 Drill", desc: "Multiple choice distractor elimination and rapid note-taking." },
+            { day: "SAT", title: "Full Timed Mock Section", desc: "Simulated exam conditions followed by sentence-by-sentence error log." }
+          ],
+          YDT: [
+            { day: "MON", title: "Gramer & Bağlaç Taraması", desc: "Zıtlık ve sebep-sonuç bağlaçları soru çözüm refleksi." },
+            { day: "TUE", title: "Kelime & Phrasal Verb Drilli", desc: "YDT çıkmış 40 kritik akademik kelime ve eş anlamlıları." },
+            { day: "WED", title: "Cümle Tamamlama & Çeviri", desc: "Özne-yüklem referans takibi ile çeldirici eleme taktiği." },
+            { day: "THU", title: "Paragraf & Akışı Bozan Cümle", desc: "Pronoun referansları ve kapsam analizi ile 5 paragraf seti." },
+            { day: "FRI", title: "Diyalog & Durum Soruları", desc: "Formal vs. informal dil ayrımı ve örtülü anlam yakalama." },
+            { day: "SAT", title: "Tam 80 Soruluk YDT Denemesi", desc: "Süre kontrollü deneme çözümü ve detaylı net analizi." }
+          ],
+          YDS: [
+            { day: "MON", title: "Akademik Cümle Analizi", desc: "Complex sentences, noun clauses & participle reduction." },
+            { day: "TUE", title: "Cloze Test & Preposition Kombinasyonları", desc: "Prepositional phrases and dependent prepositions vault." },
+            { day: "WED", title: "Paragraf Çözüm Hızı", desc: "Ana fikir, çıkarım ve yazarın tutumu soru kalıpları." },
+            { day: "THU", title: "Restatement & İlgisiz Cümle", desc: "Modal eşleştirmeleri ve zarf nüansları ile soru çözümü." },
+            { day: "FRI", title: "Akademik Kelime Tekrarı", desc: "Haftalık vocabulary error log ve collocation tekrarı." },
+            { day: "SAT", title: "80 Soruluk YDS Deneme Sınavı", desc: "180 dakika gerçek sınav provası ve hata analizi." }
+          ],
+          Speaking: [
+            { day: "MON", title: "Global Debate & Critical Thinking", desc: "Structuring 90-second spontaneous responses with cohesive signposts." },
+            { day: "TUE", title: "Pronunciation & Phoneme Intonation", desc: "Connected speech, linking /r/, and sentence stress calibration." },
+            { day: "WED", title: "Live Speaking Studio Room", desc: "Level-matched peer conversation and direct tutor feedback." },
+            { day: "THU", title: "Professional Repertoire Expansion", desc: "Executive vocabulary for disagreement, negotiation, and pitches." },
+            { day: "FRI", title: "Active Shadowing Audio Drill", desc: "Shadowing native speaker rhythm and natural cadence." },
+            { day: "SAT", title: "Spontaneous Prompt Simulation", desc: "Record 3 unseen topics and review hesitation markers." }
+          ],
+          General: [
+            { day: "MON", title: "Grammar System & Core Language", desc: "Mastering one structural system and immediate sentence production." },
+            { day: "TUE", title: "Active Vocabulary Expansion", desc: "Everyday collocation chunks and context application." },
+            { day: "WED", title: "Speaking Practice Room", desc: "Live conversational exchange with focus on flow over perfection." },
+            { day: "THU", title: "Reading & Listening Input", desc: "Engaging with authentic audio/articles and noting new expressions." },
+            { day: "FRI", title: "Guided Writing Journal", desc: "Produce 150-word reflection using target weekly language." },
+            { day: "SAT", title: "Weekly Transfer Challenge", desc: "Use 5 newly learned structures in a real-world communication setting." }
+          ]
+        };
+
+        const list = scheduleTemplates[exam] || scheduleTemplates.General;
+        $('#scheduleList').innerHTML = list.map(item => `
+          <div class="schedule-day-row">
+            <span class="schedule-day-label">${item.day}</span>
+            <div class="schedule-day-tasks">
+              <strong>${item.title}</strong>
+              <span>${item.desc}</span>
+            </div>
+          </div>
+        `).join('');
+
+        $('#plannerResult').style.display = 'block';
+        showToast('Study schedule generated.');
+      });
+
+      $('#downloadScheduleBtn').addEventListener('click', () => {
+        const exam = $('#planExam').value;
+        const rows = $$('.schedule-day-row', $('#scheduleList')).map(r => `${$('.schedule-day-label', r).textContent}: ${$('.schedule-day-tasks strong', r).textContent} — ${$('.schedule-day-tasks span', r).textContent}`).join('\n\n');
+        const content = `L.B. ENGLISH CO. — CUSTOM STUDY ROADMAP\nTarget Goal: ${exam}\n\n${rows}\n\nNeed personalized 1:1 guidance? Book a free diagnostic call at lb-english.co`;
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `lb-english-${exam.toLowerCase()}-study-plan.txt`;
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 500);
+        showToast('Study plan downloaded.');
+      });
+
+      $('#year').textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "L.B. English Co.",
+    "description": "Private online English coaching, exam preparation, speaking sessions, resources and study-plan consultancy.",
+    "areaServed": "Online",
+    "knowsAbout": ["IELTS", "SAT English", "TOEFL", "YDT", "YDS", "YÖKDİL", "Business English", "CEFR English"]
+  }
+  </script>
+</body>
+</html>
